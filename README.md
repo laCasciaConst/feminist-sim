@@ -1,4 +1,4 @@
-# feminist育成-sim
+# feminist育成-simulateur
 
 **Jeu narratif en développement solo, mêlant esthétique low-poly de l’ère PS1/PS2 et structure de simulation de type Princess Maker, visant à explorer la polarisation de genre dans la société sud-coréenne.**
 
