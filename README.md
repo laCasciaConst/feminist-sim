@@ -1,22 +1,32 @@
-Voici la structure initiale du projet **feminist育成-sim**.  
-Les documents de conception et les fichiers de dialogues multilingues sont regroupés dans le dossier `Docs`.
+# Structure initiale du projet **feminist育成-sim**
+
+Les documents de conception et les fichiers de dialogues multilingues sont regroupés dans le dossier `Docs`.  
 
 ```plaintext
-feminist育成-sim/
+feminist-sim/
 ├── Assets/
-│   ├── Scenes/                  ← 씬 파일 (.unity)  
-│                                ← Scènes Unity (.unity)
+│   ├── Scenes/                  ← 씬 파일 / Scènes Unity (.unity)
 │
 │   ├── Scripts/
-│   │   └── Dialogue/            ← JSON 파서, 선택지 시스템 등  
-│                                ← Parseur JSON, logique de choix
+│   │   ├── Core/                ← 게임 시작, 메인 루프, 상태 관리
+│   │   ├── DialogueSystem/      ← JSON 파싱, 대사 진행, 선택지 처리
+│   │   ├── UI/                  ← 텍스트 박스, 버튼, 선택지 생성
+│   │   ├── Character/           ← 캐릭터 제어, 애니메이션
+│   │   ├── Logic/               ← 성향 누적, 조건 분기, 엔딩 판단 등
+│   │   └── Utils/               ← 공통 유틸 함수 (ex: string 파싱, 로깅)
 │
 │   ├── Resources/
-│   │   └── DialogueData/        ← JSON 대사 스크립트  
-│                                ← Scripts de dialogue au format JSON
+│   │   ├── DialogueData/          ← JSON 대사 스크립트 / Scripts de dialogue
+│   │   │   ├── MainStory/         ← 메인 스토리 챕터별 JSON
+│   │   │   ├── SideEvents/        ← 선택지 이벤트, 소규모 갈등
+│   │   │   ├── System/            ← 튜토리얼, 점성술사, 엔딩 조건
+│   │   │   └── Localization/      ← 언어별 텍스트 JSON (kr, fr)
+│   │   ├── CharacterProfiles/     ← NPC 성향, 관계도 JSON
+│   │   ├── StatusTables/          ← 성향 점수 누적용 DB
+│   │   └── Configs/               ← 게임 설정값 (텍스트 속도, UI 사이즈 등)
 │
 │   ├── UI/                      ← 텍스트 박스, 선택지 버튼, 애니메이션 프리팹  
-│                                ← UI : boîtes de texte, boutons, animations
+│   │                            ← UI : boîtes de texte, boutons, animations
 │
 │   ├── Art/
 │   │   ├── Characters/          ← 로우폴리 FBX/Prefab  
@@ -27,7 +37,7 @@ feminist育成-sim/
 │   │                            ← Icônes pour l'interface
 │
 │   ├── Prefabs/                 ← 전체 씬 구성용 프리팹  
-│                                ← Prefabs de mise en scène
+│   │                            ← Prefabs de mise en scène
 │
 │   └── Fonts/                   ← TextMeshPro용 폰트  
 │                                ← Polices pour TextMeshPro
@@ -36,13 +46,13 @@ feminist育成-sim/
 │                                ← Documents de conception, scénarios, traductions
 │
 │   ├── Scenario/                ← 스토리, 선택지 설계용 문서  
-│                                ← Scripts narratifs, structure de choix
+│   │                            ← Scripts narratifs, structure de choix
 │
 │   ├── Localization_kr/         ← 한국어 대사 원본  
-│                                ← Scripts originaux en coréen
+│   │                            ← Scripts originaux en coréen
 │
 │   ├── Localization_fr/         ← 프랑스어 번역본  
-│                                ← Traductions en français
+│   │                            ← Traductions en français
 │
 │   └── Mechanics/               ← 성향 구조, 시스템 설계서 등  
 │                                ← Systèmes de gameplay, structures de valeurs
