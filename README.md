@@ -100,8 +100,8 @@ feminist-sim/
 ## 📌 Informations complémentaires
 
 - Langages : Unity C#, automatisation partielle en Python
-- Graphismes : style Nintendo DS(2006) + PS1/PS2, low-poly
-- Interface : 2D en overlay, inspirée de l’esthétique “dating sim” classique
+- Graphismes : style Nintendo DS(2004)/DS Lite(2006)/DSi(2008) + PS1/PS2, low-poly
+- Interface : 2D en overlay, dans le style des visual novels PC-98 avec UI plein écran
 - Plateforme : PC (bilingue : coréen & français)
 
 ---

@@ -1,0 +1,60 @@
+[
+  {
+    "ending_id": "iron_logic",
+    "title": "강철의 논리",
+    "coordinate_conditions": {
+      "x": ">=4",
+      "y": ">=4"
+    },
+    "required_flags": [
+      "rejected_all_blame"
+    ],
+    "description": "권위와 논리로 일관된 판단, 공감 없이 단죄를 선택한 루트"
+  },
+  {
+    "ending_id": "shared_words",
+    "title": "함께한 문장들",
+    "coordinate_conditions": {
+      "x": "<=-4",
+      "y": "<=-4"
+    },
+    "required_flags": [
+      "supported_protest"
+    ],
+    "description": "연대와 자율을 실천한 플레이어만 진입 가능, 고난도 루트"
+  },
+  {
+    "ending_id": "weight_of_name",
+    "title": "이름의 무게",
+    "coordinate_conditions": {
+      "x": ">=3",
+      "y": ">=3"
+    },
+    "required_flags": [
+      "accepted_family_responsibility"
+    ],
+    "description": "질서와 책임을 함께 수용한 플레이어만 해당, 극히 드뭄"
+  },
+  {
+    "ending_id": "no_one_told_me",
+    "title": "아무도 내게 말하지 않았다",
+    "coordinate_conditions": {
+      "x": "<=-4",
+      "y": ">=4"
+    },
+    "required_flags": [
+      "refused_every_request"
+    ],
+    "description": "모든 연결과 요청을 거부한 개인주의 냉소 루트"
+  },
+  {
+    "ending_id": "threshold_door",
+    "title": "낯선 문 앞에서",
+    "coordinate_conditions": {
+      "x": "between -2 and 2",
+      "y": "between -2 and 2"
+    },
+    "required_flags": [],
+    "description": "성향이 흐릿하고 일관성이 부족한 경우 — 유보적 엔딩"
+  }
+]
