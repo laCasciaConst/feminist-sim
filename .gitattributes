@@ -1,2 +1,12 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+# 모든 텍스트 파일은 LF로 저장
+* text=auto eol=lf
+
+# JSON 파일은 LF 유지
+*.json text eol=lf
+
+# 엑셀은 바이너리니까 자동변환 X
+*.xlsx binary
+
+# Unity 메타파일도 LF로
+*.meta text eol=lf

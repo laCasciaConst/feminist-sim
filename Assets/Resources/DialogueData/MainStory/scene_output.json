@@ -1,0 +1,50 @@
+[
+  {
+    "SceneID": "sample_scene_01",
+    "DialogueBlock": [
+      {
+        "SceneID": "sample_scene_01",
+        "Type": "Dialogue",
+        "Speaker": "민정",
+        "Emotion": "진지",
+        "Dialogue": "여자도 군대 가야 한다고 생각해.",
+        "ChoiceID": "",
+        "ChoiceText": "",
+        "Effect": "",
+        "AvailableIf": "",
+        "LockedIf": ""
+      },
+      {
+        "SceneID": "sample_scene_01",
+        "Type": "Dialogue",
+        "Speaker": "승현",
+        "Emotion": "당황",
+        "Dialogue": "그건 좀 다른 얘기지...",
+        "ChoiceID": "",
+        "ChoiceText": "",
+        "Effect": "",
+        "AvailableIf": "",
+        "LockedIf": ""
+      }
+    ],
+    "ChoiceGroup": {
+      "ChoiceID": "choice_military",
+      "Choices": [
+        {
+          "id": "choice_military_1",
+          "text": "평등하게 해야지.",
+          "effect": "평등주의 += 1",
+          "availableIf": "",
+          "lockedIf": ""
+        },
+        {
+          "id": "choice_military_2",
+          "text": "그냥 가기 싫다.",
+          "effect": "개인주의 += 1",
+          "availableIf": "냉소주의 >= 1",
+          "lockedIf": ""
+        }
+      ]
+    }
+  }
+]
