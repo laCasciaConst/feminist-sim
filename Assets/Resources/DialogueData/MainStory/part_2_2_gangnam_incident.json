@@ -1,0 +1,88 @@
+{
+  "SceneID": "part_2_2_gangnam_incident",
+  "DialogueBlock": [
+    {
+      "Speaker": "SNS_게시글",
+      "Emotion": "격정",
+      "Dialogue": "여성이기 때문에 죽었다. 이것은 여성혐오다."
+    },
+    {
+      "Speaker": "댓글_1",
+      "Emotion": "냉소",
+      "Dialogue": "여자가 약하니까 노려진 거다. 자연의 섭리다."
+    },
+    {
+      "Speaker": "게시글_작성자",
+      "Emotion": "격앙",
+      "Dialogue": "그게 여성혐오라니까 무슨 소리야!"
+    },
+    {
+      "Speaker": "댓글_2",
+      "Emotion": "논리적",
+      "Dialogue": "밤길 무섭다고 왜 남자를 의심하냐. 나도 무섭다."
+    },
+    {
+      "Speaker": "게시글_작성자",
+      "Emotion": "설득",
+      "Dialogue": "그럼 LED 가로등, 비상벨 설치는 잘한 일이잖아."
+    },
+    {
+      "Speaker": "댓글_3",
+      "Emotion": "불신",
+      "Dialogue": "여가부는 무고죄나 똑바로 다뤄라. 예산 낭비다."
+    },
+    {
+      "Speaker": "중립_참여자",
+      "Emotion": "사실제시",
+      "Dialogue": "여가부 예산 대부분은 미혼모 지원임. 무고죄도 전체 통계에선 낮은 수치야."
+    },
+    {
+      "Speaker": "댓글_3",
+      "Emotion": "억울",
+      "Dialogue": "그래도 인생이 무너진 사람 입장에선 끔찍한 거다."
+    },
+    {
+      "Speaker": "중립_참여자",
+      "Emotion": "이성적",
+      "Dialogue": "억울한 건 여성 피해자도 마찬가지지. 이건 구조의 문제야."
+    },
+    {
+      "Speaker": "댓글_4",
+      "Emotion": "냉소",
+      "Dialogue": "왜 맨날 여성만 피해자인 척 하는지 모르겠다."
+    }
+  ],
+  "ChoiceGroup": {
+    "ChoiceID": "gangnam_2016_response",
+    "Choices": [
+      {
+        "id": "A",
+        "text": "이건 명백한 여성혐오다. 사회가 바뀌어야 한다.",
+        "effect": "평등주의 += 1; 연대지향 += 1",
+        "availableIf": "",
+        "lockedIf": ""
+      },
+      {
+        "id": "B",
+        "text": "누구나 피해자가 될 수 있다. 공정한 제도가 우선이다.",
+        "effect": "권위주의 += 1; 중도성향 += 1",
+        "availableIf": "",
+        "lockedIf": ""
+      },
+      {
+        "id": "C",
+        "text": "남자도 억울한 일 많다. 무고 같은 건 제대로 잡아야 한다.",
+        "effect": "개인주의 += 1; 권위주의 += 1",
+        "availableIf": "개인주의 >= 2",
+        "lockedIf": "연대지향 >= 3"
+      },
+      {
+        "id": "D",
+        "text": "헷갈린다. 인터넷에서 본 걸로 판단하긴 어려워.",
+        "effect": "냉소주의 += 1",
+        "availableIf": "냉소주의 >= 1",
+        "lockedIf": ""
+      }
+    ]
+  }
+}
