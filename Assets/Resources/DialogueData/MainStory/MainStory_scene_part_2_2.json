@@ -1,0 +1,84 @@
+{
+  "SceneID": "part_2_2_gangnam_incident",
+  "DialogueBlock": [
+    {
+      "id": "d001",
+      "Speaker": "SNS_Post",
+      "Emotion": "angry"
+    },
+    {
+      "id": "d002",
+      "Speaker": "Comment_1",
+      "Emotion": "cynical"
+    },
+    {
+      "id": "d003",
+      "Speaker": "Post_Author",
+      "Emotion": "upset"
+    },
+    {
+      "id": "d004",
+      "Speaker": "Comment_2",
+      "Emotion": "logical"
+    },
+    {
+      "id": "d005",
+      "Speaker": "Post_Author",
+      "Emotion": "persuasive"
+    },
+    {
+      "id": "d006",
+      "Speaker": "Comment_3",
+      "Emotion": "distrustful"
+    },
+    {
+      "id": "d007",
+      "Speaker": "Neutral_User",
+      "Emotion": "factual"
+    },
+    {
+      "id": "d008",
+      "Speaker": "Comment_3",
+      "Emotion": "frustrated"
+    },
+    {
+      "id": "d009",
+      "Speaker": "Neutral_User",
+      "Emotion": "calm"
+    },
+    {
+      "id": "d010",
+      "Speaker": "Comment_4",
+      "Emotion": "cynical"
+    }
+  ],
+  "ChoiceGroup": {
+    "ChoiceID": "gangnam_2016_response",
+    "Choices": [
+      {
+        "id": "gangnam_2016_response_A",
+        "effect": "egalitarism += 1; solidarity += 1",
+        "availableIf": "",
+        "lockedIf": ""
+      },
+      {
+        "id": "gangnam_2016_response_B",
+        "effect": "authoritarianism += 1; neutral += 1",
+        "availableIf": "",
+        "lockedIf": ""
+      },
+      {
+        "id": "gangnam_2016_response_C",
+        "effect": "individualism += 1; authoritarianism += 1",
+        "availableIf": "individualism >= 2",
+        "lockedIf": "solidarity >= 3"
+      },
+      {
+        "id": "gangnam_2016_response_D",
+        "effect": "cynicism += 1",
+        "availableIf": "cynicism >= 1",
+        "lockedIf": ""
+      }
+    ]
+  }
+}
