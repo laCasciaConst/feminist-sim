@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trait Simulation Demo</title>
+  <style>
+    body {
+      display: flex;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #main {
+      width: 70%;
+      padding: 20px;
+    }
+
+    #graph {
+      width: 30%;
+      padding: 20px;
+      background: #f9f9f9;
+      border-left: 1px solid #ccc;
+    }
+
+    button {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .locked {
+      color: #aaa;
+      pointer-events: none;
+    }
+
+    canvas {
+      border: 1px solid black;
+    }
+
+    #info {
+      margin-top: 10px;
+      font-family: sans-serif;
+    }
+
+    #quadrant {
+      display: block;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="lang-buttons">
+      <button onclick="setLang('kr')">🇰🇷 KR</button>
+      <button onclick="setLang('fr')">🇫🇷 FR</button>
+    </div>
+
+    <div id="text"></div>
+
+    <div id="choices"></div>
+    <div>
+      <h4>Traits</h4>
+      <pre id="stats"></pre>
+    </div>
+  </div>
+  <canvas id="quadrant" width="400" height="400"></canvas>
+  <div id="info"></div>
+  <div id="graph">
+    <canvas id="radarChart" width="300" height="300"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scenes.js"></script>
+  <script src="logic.js"></script>
+  <script>
+    window.onload = () => {
+      setLang('kr');
+      updateStats();
+      renderScene();
+    };
+  </script>
+</body>
+
+</html>
