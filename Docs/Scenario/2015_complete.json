@@ -1,0 +1,772 @@
+[
+  {
+    "sceneId": "2015_A_Q1",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "중학교 2학년 교실, 동아리 신청 다음 날.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Teacher",
+        "label_kr": "담임",
+        "label_fr": "Prof principal",
+        "text_kr": "이번 학기 동아리는 반드시 하나 이상 신청해야 합니다.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "남은 데가 거기밖에 없어서 그냥 신청했는데……",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "막 정원에 꽃 심고 그러나?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "남는 자리가 없었단 말이야!",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q1_A",
+        "text_kr": "그게 뭐 어때서.",
+        "effects": [
+          {
+            "trait": "individual",
+            "value": 2,
+            "mode": "add"
+          },
+          {
+            "trait": "equality",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 별로 상관 없지 않아? 그리고, 정원에서 딴짓해도 모르실 걸.",
+          "형: 그런가?"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q1_B",
+        "text_kr": "다른 사람과 바꾸자!",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 선생님께 부탁하면 다른 동아리에 들어갈 수 있을지도 몰라.",
+          "형: 그런가?"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q1_C",
+        "text_kr": "지루하겠다.",
+        "effects": [
+          {
+            "trait": "individual",
+            "value": 2,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 거긴 여자애들 뿐이잖아. 친구도 없고.",
+          "형: 맞아. (속상해 보인다.)"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q1_D",
+        "text_kr": "(관심 없음.)",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: (뭐, 알아서 하겠지.)",
+          "형: (무척 속상해 보인다.)"
+        ],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2015_A_Q2",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "중학교 급식실, 점심시간.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "있지, {playerName}, 급식실 선생님이 남자애들한테만 반찬을 많이 주는 거 같애! 내가 아까 지켜봤는데, 남자애들은 소세지를 엄청 많이 받았어. 너도 봤어?",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q2_A",
+        "text_kr": "사람마다 정해진 양이 있는 걸.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 너무 신경쓰지 마. 우연이겠지.",
+          "진이: 그런가……"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q2_B",
+        "text_kr": "우리도 더 달라고 하자.",
+        "effects": [
+          {
+            "trait": "individual",
+            "value": 1,
+            "mode": "add"
+          },
+          {
+            "trait": "equality",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 내 거 더 먹을래?",
+          "진이: 고마워. 근데 더 먹고 싶어서 그런 거 아니야. 그냥 그렇다구!"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q2_C",
+        "text_kr": "그 선생님, 이상하네.",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 1,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "진이: 그렇지? 정말 이상해!"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q2_D",
+        "text_kr": "나는 못 봤어.",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 착각 아닐까?",
+          "진이: 흠…… 내가 봤는데!"
+        ],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2015_A_Q3",
+    "dialogues": [
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "진짜? 근데 치마가 더 예쁘긴 하잖아……",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "예쁘고 말고를 떠나서 너무 불편해. 밥 먹고 나면 배가 불편해.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "난 벌 받기 싫어!",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q3_A",
+        "text_kr": "맞아. 바지보다 치마가 더 귀여워.",
+        "effects": [
+          {
+            "trait": "individual",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 바지 교복은 별로 안 예뻐."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q3_B",
+        "text_kr": "규칙은 어쩔 수 없지.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 벌 받고 싶지 않으니까."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q3_C",
+        "text_kr": "체육복 바지를 입자!",
+        "effects": [
+          {
+            "trait": "collective",
+            "value": 2,
+            "mode": "add"
+          },
+          {
+            "trait": "equality",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 교복 체육복은 편하니까 괜찮아."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q3_D",
+        "text_kr": "잘 모르겠어.",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: (그런 건 중요치 않다.)"
+        ],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2015_A_Q4",
+    "dialogues": [
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "맞다, 이번 대회 1반 남자애들이랑 우리 반이랑 축구 붙는데 걔네 수비 잘하더라.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "아 맞다. 우리는 2반이랑 붙는대. 근데 난 싫어.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "그게 왜? 너희 반에 피구 잘 하는 여자애들 많지 않아?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "그건 맞아. 다들 잘해.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "차라리 다행이네! 여자 피구랑 남자 축구, 한 쪽만 이겨도 반 전체 피자래.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "아니 그게, 나 농구하고 싶었는데……",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "(진이는 피구 대신 농구가 하고 싶었던 모양이다.)",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q4_A",
+        "text_kr": "그래도 잘하잖아!",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "진이: 뭐 어쩔 수 없지. 농구 할 줄 아는 여자애들이 많이 없더라.",
+          "형: 그건 그래. 어쨌든 무조건 피자 먹을 거야!",
+          "{playerName}: 피자에 콜라!",
+          "형: 뭐? 몬스터를 마셔야지!",
+          "진이: 넌 물을 좀 마셔. 그러다 키 안 큰다."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q4_B",
+        "text_kr": "피구도 재밌어!",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "진이: 뭐 어쩔 수 없지. 농구 할 줄 아는 여자애들이 많이 없더라.",
+          "형: 그건 그래. 어쨌든 무조건 피자 먹을 거야!",
+          "{playerName}: 피자에 콜라!",
+          "형: 뭐? 몬스터를 마셔야지!",
+          "진이: 넌 물을 좀 마셔. 그러다 키 안 큰다."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q4_C",
+        "text_kr": "이기면 피자잖아!",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 2,
+            "mode": "add"
+          },
+          {
+            "trait": "cynicism",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "진이: 뭐 어쩔 수 없지. 농구 할 줄 아는 여자애들이 많이 없더라.",
+          "형: 그건 그래. 어쨌든 무조건 피자 먹을 거야!",
+          "{playerName}: 피자에 콜라!",
+          "형: 뭐? 몬스터를 마셔야지!",
+          "진이: 넌 물을 좀 마셔. 그러다 키 안 큰다."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q4_D",
+        "text_kr": "아쉽겠다.",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "진이: 뭐 어쩔 수 없지. 농구 할 줄 아는 여자애들이 많이 없더라.",
+          "형: 그건 그래. 어쨌든 무조건 피자 먹을 거야!",
+          "{playerName}: 피자에 콜라!",
+          "형: 뭐? 몬스터를 마셔야지!",
+          "진이: 넌 물을 좀 마셔. 그러다 키 안 큰다."
+        ],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2015_A_Q5",
+    "dialogues": [
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "남자는 왜 탈의실 없어? 오늘도 체육 끝나고 복도에서 갈아입었잖아.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "어. 걔네는 문 잠그고 갈아입는데 우리는 그냥 “야 빨리 갈아입어~” 이럼.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "상관 없다고? 자꾸 그러면 여기서 벗는다?",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q5_A",
+        "text_kr": "남자는 보는 사람 없어.",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "형: 난 속옷 보여주기 싫어.",
+          "FriendA 아, 남자는 괜찮아! 다들 여름에 더우면 웃통 까고 축구하잖아.",
+          "형: 난 그런 거 안 해!",
+          "FriendA 얘 진짜 소심하네."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q5_B",
+        "text_kr": "화장실에서 갈아입으면 되지!",
+        "effects": [
+          {
+            "trait": "individual",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "형: 난 속옷 보여주기 싫어.",
+          "FriendA 아, 남자는 괜찮아! 다들 여름에 더우면 웃통 까고 축구하잖아.",
+          "형: 난 그런 거 안 해!",
+          "FriendA 얘 진짜 소심하네."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q5_C",
+        "text_kr": "공간이 없으면 어쩔 수 없지.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "형: 난 속옷 보여주기 싫어.",
+          "FriendA 아, 남자는 괜찮아! 다들 여름에 더우면 웃통 까고 축구하잖아.",
+          "형: 난 그런 거 안 해!",
+          "FriendA 얘 진짜 소심하네."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q5_D",
+        "text_kr": "복도에서? 별로다.",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "형: 난 속옷 보여주기 싫어.",
+          "FriendA 아, 남자는 괜찮아! 다들 여름에 더우면 웃통 까고 축구하잖아.",
+          "형: 난 그런 거 안 해!",
+          "FriendA 얘 진짜 소심하네."
+        ],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2015_A_Q6",
+    "dialogues": [
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "뭐야, Jin는 왜 용돈 만원 더 줘?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "나는 화장품도 사야 돼. 애들이 다 하니까 나만 안 하면 좀 그래.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "다들 한다고 돈 더 받아야 돼? 불공평해!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Mom",
+        "label_kr": "어머니",
+        "label_fr": "Mère",
+        "text_kr": "원래 여자들은 이것저것 돈 들 일이 많아.",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q6_A",
+        "text_kr": "불공평해.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 나도 살 거 있는데!",
+          "형: (맞장구) 봐봐, 나만 그런 생각하는 거 아님.",
+          "진이: 흥."
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q6_B",
+        "text_kr": "나도 만 원 더 받자!",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 1,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 저도 만 원 더 주세요.",
+          "어머니: (웃으며) 넌 뭘 살 건데?",
+          "형: (헛웃음)"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q6_C",
+        "text_kr": "화장품 안 쓰니까 괜찮잖아.",
+        "effects": [
+          {
+            "trait": "collective",
+            "value": 3,
+            "mode": "add"
+          },
+          {
+            "trait": "cynicism",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "진이: 맞아. 너는 안 해도 되잖아.",
+          "형: (시큰둥)"
+        ],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2015_A_Q7",
+    "dialogues": [
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "나도 저런 거 받아보고 싶다~ 진이야 뭐라고 안 해?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "(당황한 듯) 고…… 고마워…… 어, 얼른 반에 돌아가! 선생님 오실 시간 됐잖아. (빨개진 얼굴로 얼른 인Jun을 가방에 넣으며 자리를 뜬다)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Boyfriend",
+        "label_kr": "남자친구",
+        "label_fr": "Petit ami",
+        "text_kr": "(쭈뼛거리며 웃는다) 어, 어. 응!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "뽀뽀라도 해줘야 하는 거 아니야? 너 남자 다루는 법을 모르면서 연애는 어떻게 해?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "(학생들 일부 웃음. 진이는 부끄러워하며 자리에 앉는다.)",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2015_A_Q7_A",
+        "text_kr": "맞아. 남자는 좀 칭찬해줘야 잘 하기는 해.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 5,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 또 받고 싶으면 많이 표현해야 해.",
+          "친구 A: 맞아~ 남자는 그런 동물이라니까?"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q7_B",
+        "text_kr": "우리 언니가 원래 부끄러움이 많아.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 3,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 4,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 원래 조금 부끄럼을 타는 성격이니까.",
+          "친구 B: 그렇게 부끄러워서 남자친구는 어떻게 만들었냐?",
+          "FriendA 우리 없을 때 잘 할지도 모르지.",
+          "진이: 그만 물어봐!",
+          "(진이는 귀까지 빨개져서 교과서를 폈다. 친구들은 여전히 낄낄댄다.)"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q7_C",
+        "text_kr": "서로 민망했겠지. 너무 뭐라고 하진 말자.",
+        "effects": [
+          {
+            "trait": "collective",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "equality",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 원래 조금 부끄럼을 타는 성격이니까.",
+          "친구 B: 그렇게 부끄러워서 남자친구는 어떻게 만들었냐?",
+          "FriendA 우리 없을 때 잘 할지도 모르지.",
+          "진이: 그만 물어봐!",
+          "(진이는 귀까지 빨개져서 교과서를 폈다. 친구들은 여전히 낄낄댄다.)"
+        ],
+        "followUp_fr": []
+      },
+      {
+        "id": "2015_A_Q7_D",
+        "text_kr": "언니는 정말 고마워하고 있어. 난 알아.",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 3,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 4,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [
+          "{playerName}: 원래 조금 부끄럼을 타는 성격이니까.",
+          "친구 B: 그렇게 부끄러워서 남자친구는 어떻게 만들었냐?",
+          "FriendA 우리 없을 때 잘 할지도 모르지.",
+          "진이: 그만 물어봐!",
+          "(진이는 귀까지 빨개져서 교과서를 폈다. 친구들은 여전히 낄낄댄다.)"
+        ],
+        "followUp_fr": []
+      }
+    ]
+  }
+]
