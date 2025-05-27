@@ -122,16 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &210708936 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 347279915888416294, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
-  m_PrefabInstance: {fileID: 475058056460629591}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &318095519 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 832875182782679280, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
-  m_PrefabInstance: {fileID: 475058056460629591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &480504287 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 324968166236658410, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
@@ -143,7 +133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 475058056460629591}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -159,20 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1080504549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9152687895335602476, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
-  m_PrefabInstance: {fileID: 475058056460629591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1117885206 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6941908412425631423, guid: 3f70eef5c05381a47bb1d496d6d21e75, type: 3}
   m_PrefabInstance: {fileID: 8270332415377276280}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1422807085 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6654513375628156899, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
-  m_PrefabInstance: {fileID: 475058056460629591}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1650020487
 GameObject:
@@ -281,6 +261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 324968166236658410, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2802580527009946516, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -363,6 +347,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4972065730822906569, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214338216992054605, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7337128523959424721, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
@@ -572,19 +560,19 @@ PrefabInstance:
     - target: {fileID: 1249471747364642054, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
       propertyPath: choiceButtonPrefabA
       value: 
-      objectReference: {fileID: 210708936}
+      objectReference: {fileID: 472853373368066611, guid: e2c0dc35819538b48a2e92801d62efc4, type: 3}
     - target: {fileID: 1249471747364642054, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
       propertyPath: choiceButtonPrefabB
       value: 
-      objectReference: {fileID: 1422807085}
+      objectReference: {fileID: 2399096622958585658, guid: 05ff84bc89cfd504caa114ffc06035ec, type: 3}
     - target: {fileID: 1249471747364642054, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
       propertyPath: choiceButtonPrefabC
       value: 
-      objectReference: {fileID: 318095519}
+      objectReference: {fileID: 2675081264418935066, guid: d3c6217ad1841084cb662477d3e60ed0, type: 3}
     - target: {fileID: 1249471747364642054, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
       propertyPath: choiceButtonPrefabD
       value: 
-      objectReference: {fileID: 1080504549}
+      objectReference: {fileID: 2980510211593673928, guid: 5e531ed6c7879734faa8b8073a1e9e49, type: 3}
     - target: {fileID: 5804620914512451197, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
       propertyPath: m_Name
       value: DialogueUIManager

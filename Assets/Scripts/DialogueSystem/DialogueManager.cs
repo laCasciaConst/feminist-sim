@@ -35,10 +35,12 @@ public class DialogueManager : MonoBehaviour
 
         var uiManager = FindObjectOfType<DialogueUIManager>();
         uiManager.dialoguePanel.SetActive(true);
-        uiManager.choiceContainer.gameObject.SetActive(true);
+        uiManager.choiceContainer.gameObject.SetActive(false);
 
-        uiManager.StartDialogue(currentBlock.dialogues);
-        uiManager.DisplayChoices(currentBlock.choices, traits);
+        uiManager.StartDialogue(currentBlock.dialogues, () =>
+        {
+            uiManager.DisplayChoices(currentBlock.choices, traits);
+        });
 
         Debug.Log($"[씬 ID] {currentBlock.sceneId}");
         foreach (var d in currentBlock.dialogues)

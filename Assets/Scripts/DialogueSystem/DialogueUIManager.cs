@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class DialogueUIManager : MonoBehaviour
 {
@@ -26,9 +27,11 @@ public class DialogueUIManager : MonoBehaviour
     public TMP_FontAsset frenchFontAsset;
 
     private Coroutine followUpCoroutine;
+    private bool isTyping = false;
 
     public void DisplayChoices(List<DialogueChoice> choices, Dictionary<string, int> traits)
     {
+        choiceContainer.gameObject.SetActive(true);
 
         foreach (Transform child in choiceContainer)
         {
@@ -44,30 +47,47 @@ public class DialogueUIManager : MonoBehaviour
             Debug.Log($"[버튼 생성] {choice.id}");
             Debug.Log($"[텍스트 찾음?] {(text != null ? "예" : "아니오")}");
 
-            // 언어별 텍스트 설정
+            Vector3 originalPos = buttonObj.transform.localPosition;
+            buttonObj.transform.DOLocalMoveY(originalPos.y + 10f, 0.5f)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetEase(Ease.Linear)
+                .SetId(buttonObj);
+
             string localizedText = currentLanguage == SupportedLanguage.Korean ? choice.text_kr : choice.text_fr;
             text.text = localizedText;
-
-            // 언어별 폰트 설정
             text.font = currentLanguage == SupportedLanguage.Korean ? koreanFontAsset : frenchFontAsset;
 
-            // 조건 판별
+
             bool isAvailable = DialogueManager.Instance.EvaluateCondition(choice.availableIf, traits, true);
             bool isLocked = DialogueManager.Instance.EvaluateCondition(choice.lockedIf, traits, false);
             button.interactable = isAvailable && !isLocked;
-            
+
             Debug.Log($"[버튼 활성화 평가] {choice.id} → isAvailable: {isAvailable}, isLocked: {isLocked}");
             if (!isAvailable || isLocked)
                 Debug.LogWarning($"[비활성 선택지] {choice.id}가 비활성화됨");
 
-            // 클릭 시 이벤트
+
             button.onClick.AddListener(() =>
             {
                 Debug.Log($"[선택] {choice.id}");
                 DialogueManager.Instance.ApplyEffects(choice.effects);
 
-                List<string> followUp = currentLanguage == SupportedLanguage.Korean ? choice.followUp_kr : choice.followUp_fr;
-                DisplayFollowUp(followUp);
+                foreach (Transform sibling in choiceContainer)
+                {
+                    if (sibling != buttonObj.transform)
+                    {
+                        DOTween.Kill(sibling);
+                        sibling.gameObject.SetActive(false);
+                    }
+                }
+
+                DOTween.Kill(buttonObj);
+                buttonObj.transform.DOScale(1.2f, 0.25f)
+                    .SetEase(Ease.OutBack)
+                    .OnComplete(() =>
+                    {
+                        StartCoroutine(HideAndFollowUp(buttonObj, choice));
+                    });
             });
         }
     }
@@ -98,33 +118,23 @@ public class DialogueUIManager : MonoBehaviour
         return prefab;
     }
 
+    private IEnumerator HideAndFollowUp(GameObject selectedButton, DialogueChoice choice)
+    {
+        yield return new WaitForSeconds(0.7f);
+        selectedButton.SetActive(false);
+        List<string> followUp = currentLanguage == SupportedLanguage.Korean ? choice.followUp_kr : choice.followUp_fr;
+        DisplayFollowUp(followUp);
+    }
 
-    public void DisplayFollowUp(List<string> lines)
+    public void DisplayFollowUp(List<string> lines, System.Action onComplete = null)
     {
         if (followUpCoroutine != null)
             StopCoroutine(followUpCoroutine);
 
-        followUpCoroutine = StartCoroutine(ShowLinesCoroutine(lines));
+        followUpCoroutine = StartCoroutine(ShowLinesCoroutine(lines, onComplete));
     }
 
-    private IEnumerator ShowLinesCoroutine(List<string> lines)
-    {
-        dialoguePanel.SetActive(true);
-
-        foreach (var line in lines)
-        {
-            bodyText.text = line;
-            labelText.text = ""; // 필요시 화자 이름 추출
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        }
-
-        // 대사 끝난 뒤 선택지 보여주기
-        DialogueManager.Instance.ShowChoices();
-
-        Debug.Log("[후속 대사 종료]");
-    }
-
-    public void StartDialogue(List<DialogueLine> lines)
+    public void StartDialogue(List<DialogueLine> lines, System.Action onDialogueComplete = null)
     {
         List<string> localizedLines = new List<string>();
         foreach (var line in lines)
@@ -137,7 +147,49 @@ public class DialogueUIManager : MonoBehaviour
         bodyText.font = selectedFont;
         labelText.font = selectedFont;
 
-        StartCoroutine(ShowLinesCoroutine(localizedLines));
+        StartCoroutine(ShowLinesCoroutine(localizedLines, onDialogueComplete));
+    }
 
+    private IEnumerator TypeLine(string line)
+    {
+        isTyping = true;
+        bodyText.text = "";
+        foreach (char c in line)
+        {
+            bodyText.text += c;
+            yield return new WaitForSeconds(0.05f);
+        }
+        isTyping = false;
+    }
+
+    private IEnumerator ShowLinesCoroutine(List<string> lines, System.Action onComplete = null)
+    {
+        dialoguePanel.SetActive(true);
+
+        foreach (var line in lines)
+        {
+            labelText.text = "";
+            Coroutine typingCoroutine = StartCoroutine(TypeLine(line));
+
+            while (isTyping)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StopCoroutine(typingCoroutine);
+                    bodyText.text = line;
+                    isTyping = false;
+                    break;
+                }
+                yield return null;
+            }
+
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Space));
+        }
+
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        onComplete?.Invoke();
+
+        Debug.Log("[후속 대사 종료]");
     }
 }
