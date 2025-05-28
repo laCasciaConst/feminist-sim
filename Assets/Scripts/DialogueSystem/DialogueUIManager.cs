@@ -28,6 +28,8 @@ public class DialogueUIManager : MonoBehaviour
 
     private Coroutine followUpCoroutine;
     private bool isTyping = false;
+    private bool canAcceptInput = true;
+
 
     public void DisplayChoices(List<DialogueChoice> choices, Dictionary<string, int> traits)
     {
@@ -163,19 +165,19 @@ public class DialogueUIManager : MonoBehaviour
         isTyping = true;
         bodyText.text = "";
 
-    foreach (char c in line)
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        foreach (char c in line)
         {
-            bodyText.text = line;
-            break; // 남은 글자 생략
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                bodyText.text = line;
+                break; // 남은 글자 생략
+            }
+
+            bodyText.text += c;
+            yield return new WaitForSeconds(0.05f);
         }
 
-        bodyText.text += c;
-        yield return new WaitForSeconds(0.05f);
-    }
-
-    isTyping = false;
+        isTyping = false;
     }
 
     private IEnumerator ShowLinesCoroutine(List<string> lines, System.Action onComplete = null)
@@ -189,7 +191,7 @@ public class DialogueUIManager : MonoBehaviour
 
             while (isTyping)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (canAcceptInput && Input.GetKeyDown(KeyCode.Space))
                 {
                     StopCoroutine(typingCoroutine);
                     bodyText.text = line;
@@ -200,7 +202,7 @@ public class DialogueUIManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.2f);
 
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => canAcceptInput && Input.GetKeyDown(KeyCode.Space));
             yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Space));
         }
 
@@ -214,14 +216,21 @@ public class DialogueUIManager : MonoBehaviour
     // 페이드 함수
     public IEnumerator FadeTransition(System.Action onMidpoint = null)
     {
+        canAcceptInput = false;
+
         fadePanel.gameObject.SetActive(true);
         fadePanel.color = new Color(0, 0, 0, 0);
-        yield return fadePanel.DOFade(2f, 1f).WaitForCompletion();
-        Debug.Log("[페이드 완료] 다음 씬 호출 시도");
+        yield return fadePanel.DOFade(1f, 1f).WaitForCompletion();
+
         onMidpoint?.Invoke();  // 중간 지점에서 씬 전환
 
         yield return new WaitForSeconds(0.2f);
         yield return fadePanel.DOFade(0f, 0.5f).WaitForCompletion();
         fadePanel.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+
+        // 다음 씬 실행
+        DialogueManager.Instance.PlayCurrentScene();
     }
 }

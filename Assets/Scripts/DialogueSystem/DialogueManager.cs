@@ -164,5 +164,8 @@ public class DialogueManager : MonoBehaviour
         return wrapper.blocks;
     }
 
-
+    public void PlayCurrentScene()
+    {
+        PlayScene(currentSceneList[currentSceneIndex]);
+    }
 }
