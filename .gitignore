@@ -65,3 +65,4 @@ __pycache__/
 
 # ⚠️ DO NOT ignore manifest.json and packages-lock.json — required for package tracking
 # (Keep these files committed)
+Assets/Fonts/DungGeunMo SDF.asset
