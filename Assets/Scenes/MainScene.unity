@@ -265,6 +265,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2345946650984962347, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 08e2e4d383bb38a438b1eca5427b6114, type: 2}
+    - target: {fileID: 2345946650984962347, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1882519799555998063, guid: 08e2e4d383bb38a438b1eca5427b6114, type: 2}
+    - target: {fileID: 2345946650984962347, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2802580527009946516, guid: 0e1ac8398ad67d148b98928fe68ccbda, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -557,6 +569,10 @@ PrefabInstance:
       propertyPath: choiceContainer
       value: 
       objectReference: {fileID: 480504287}
+    - target: {fileID: 1249471747364642054, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
+      propertyPath: koreanFontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 08e2e4d383bb38a438b1eca5427b6114, type: 2}
     - target: {fileID: 1249471747364642054, guid: b80c7b363accf7b4f9439ff90a30ccf4, type: 3}
       propertyPath: choiceButtonPrefabA
       value: 
