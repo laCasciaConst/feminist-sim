@@ -46,3 +46,8 @@ public class ChoiceEffect
     public int value;
     public string mode;
 }
+
+[System.Serializable]
+public class DialogueBlockListWrapper {
+    public List<DialogueBlock> blocks;
+}

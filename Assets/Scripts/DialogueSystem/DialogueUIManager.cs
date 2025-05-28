@@ -38,14 +38,17 @@ public class DialogueUIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (var choice in choices)
+        for (int i = 0; i < choices.Count; i++)
         {
+            var choice = choices[i];
             var buttonObj = Instantiate(GetPrefabByChoiceId(choice.id), choiceContainer);
             var button = buttonObj.GetComponent<Button>();
             var text = buttonObj.GetComponentInChildren<TMP_Text>();
 
-            Debug.Log($"[버튼 생성] {choice.id}");
-            Debug.Log($"[텍스트 찾음?] {(text != null ? "예" : "아니오")}");
+            float delay = i * 0.1f;
+
+            // Debug.Log($"[버튼 생성] {choice.id}");
+            // Debug.Log($"[텍스트 찾음?] {(text != null ? "예" : "아니오")}");
 
             Vector3 originalPos = buttonObj.transform.localPosition;
             buttonObj.transform.DOLocalMoveY(originalPos.y + 10f, 0.5f)
@@ -57,15 +60,20 @@ public class DialogueUIManager : MonoBehaviour
             text.text = localizedText;
             text.font = currentLanguage == SupportedLanguage.Korean ? koreanFontAsset : frenchFontAsset;
 
-
             bool isAvailable = DialogueManager.Instance.EvaluateCondition(choice.availableIf, traits, true);
             bool isLocked = DialogueManager.Instance.EvaluateCondition(choice.lockedIf, traits, false);
             button.interactable = isAvailable && !isLocked;
 
-            Debug.Log($"[버튼 활성화 평가] {choice.id} → isAvailable: {isAvailable}, isLocked: {isLocked}");
-            if (!isAvailable || isLocked)
-                Debug.LogWarning($"[비활성 선택지] {choice.id}가 비활성화됨");
+            // Debug.Log($"[버튼 활성화 평가] {choice.id} → isAvailable: {isAvailable}, isLocked: {isLocked}");
+            // if (!isAvailable || isLocked)
+            //     Debug.LogWarning($"[비활성 선택지] {choice.id}가 비활성화됨");
 
+            buttonObj.transform.localScale = Vector3.zero;
+            CanvasGroup cg = buttonObj.AddComponent<CanvasGroup>();
+            cg.alpha = 0f;
+
+            buttonObj.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack).SetDelay(delay);
+            cg.DOFade(1f, 0.3f).SetDelay(delay);
 
             button.onClick.AddListener(() =>
             {
@@ -123,7 +131,7 @@ public class DialogueUIManager : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         selectedButton.SetActive(false);
         List<string> followUp = currentLanguage == SupportedLanguage.Korean ? choice.followUp_kr : choice.followUp_fr;
-        DisplayFollowUp(followUp);
+        DisplayFollowUp(followUp, () => StartCoroutine(FadeTransition(() => DialogueManager.Instance.GoToNextScene())));
     }
 
     public void DisplayFollowUp(List<string> lines, System.Action onComplete = null)
@@ -150,16 +158,24 @@ public class DialogueUIManager : MonoBehaviour
         StartCoroutine(ShowLinesCoroutine(localizedLines, onDialogueComplete));
     }
 
-    private IEnumerator TypeLine(string line)
+    IEnumerator TypeLine(string line)
     {
         isTyping = true;
         bodyText.text = "";
-        foreach (char c in line)
+
+    foreach (char c in line)
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            bodyText.text += c;
-            yield return new WaitForSeconds(0.05f);
+            bodyText.text = line;
+            break; // 남은 글자 생략
         }
-        isTyping = false;
+
+        bodyText.text += c;
+        yield return new WaitForSeconds(0.05f);
+    }
+
+    isTyping = false;
     }
 
     private IEnumerator ShowLinesCoroutine(List<string> lines, System.Action onComplete = null)
@@ -182,14 +198,30 @@ public class DialogueUIManager : MonoBehaviour
                 }
                 yield return null;
             }
+            yield return new WaitForSeconds(0.2f);
 
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
             yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Space));
         }
 
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        Debug.Log("[대사 끝남] 콜백 실행 직전");
         onComplete?.Invoke();
-
         Debug.Log("[후속 대사 종료]");
+    }
+
+    public Image fadePanel;
+
+    // 페이드 함수
+    public IEnumerator FadeTransition(System.Action onMidpoint = null)
+    {
+        fadePanel.gameObject.SetActive(true);
+        fadePanel.color = new Color(0, 0, 0, 0);
+        yield return fadePanel.DOFade(2f, 1f).WaitForCompletion();
+        Debug.Log("[페이드 완료] 다음 씬 호출 시도");
+        onMidpoint?.Invoke();  // 중간 지점에서 씬 전환
+
+        yield return new WaitForSeconds(0.2f);
+        yield return fadePanel.DOFade(0f, 0.5f).WaitForCompletion();
+        fadePanel.gameObject.SetActive(false);
     }
 }

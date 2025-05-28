@@ -6,6 +6,9 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
+    public List<DialogueBlock> currentSceneList;
+    private int currentSceneIndex = 0;
+
     Dictionary<string, int> traits = new Dictionary<string, int> {
         { "equality", 0 },
         { "authority", 0 },
@@ -31,16 +34,17 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         Debug.Log("Here comes the Start function!!!");
-        currentBlock = LoadDialogueBlockFromFile("2015_complete.json");
+        currentSceneList = LoadDialogueBlocksFromFile("2015_complete.json");
+        currentSceneIndex = 0;
 
-        var uiManager = FindObjectOfType<DialogueUIManager>();
-        uiManager.dialoguePanel.SetActive(true);
-        uiManager.choiceContainer.gameObject.SetActive(false);
-
-        uiManager.StartDialogue(currentBlock.dialogues, () =>
+        if (currentSceneList == null || currentSceneList.Count == 0)
         {
-            uiManager.DisplayChoices(currentBlock.choices, traits);
-        });
+            Debug.LogError("[에러] currentSceneList가 비었거나 로딩 실패!");
+            return;
+        }
+
+        currentSceneIndex = 0;
+        PlayScene(currentSceneList[currentSceneIndex]);
 
         Debug.Log($"[씬 ID] {currentBlock.sceneId}");
         foreach (var d in currentBlock.dialogues)
@@ -50,6 +54,39 @@ public class DialogueManager : MonoBehaviour
             Debug.Log($"[선택지] {c.id}: {c.text_kr} → 효과 {c.effects.Count}개");
     }
 
+    void PlayScene(DialogueBlock block)
+    {
+        currentBlock = block;
+        var uiManager = FindObjectOfType<DialogueUIManager>();
+
+        uiManager.dialoguePanel.SetActive(true);
+        uiManager.choiceContainer.gameObject.SetActive(false);
+
+        uiManager.StartDialogue(block.dialogues, () =>
+        {
+            uiManager.DisplayChoices(block.choices, traits);
+        });
+    }
+
+    public void GoToNextScene()
+    {
+        currentSceneIndex++;
+        if (currentSceneIndex < currentSceneList.Count)
+        {
+            PlayScene(currentSceneList[currentSceneIndex]);
+        }
+        else
+        {
+            Debug.Log("[엔딩] 더 이상 다음 씬이 없습니다.");
+            // 필요 시 엔딩 화면으로 전환 등 처리
+        }
+    }
+
+    public void ShowChoices()
+    {
+        var uiManager = FindObjectOfType<DialogueUIManager>();
+        uiManager.DisplayChoices(currentBlock.choices, traits);
+    }
 
     public void ApplyEffects(List<ChoiceEffect> effects)
     {
@@ -98,17 +135,34 @@ public class DialogueManager : MonoBehaviour
         };
     }
 
-    public DialogueBlock LoadDialogueBlockFromFile(string filename)
+    public List<DialogueBlock> LoadDialogueBlocksFromFile(string filename)
     {
         string path = Path.Combine(Application.streamingAssetsPath, filename);
         string json = File.ReadAllText(path);
-        DialogueBlock block = JsonUtility.FromJson<DialogueBlock>(json);
-        return block;
+
+        Debug.Log("[원본 JSON 내용]\n" + json);
+
+        json = "{\"blocks\":" + json + "}";
+
+        Debug.Log("[래핑된 JSON 내용]\n" + json);
+
+        DialogueBlockListWrapper wrapper = JsonUtility.FromJson<DialogueBlockListWrapper>(json);
+
+        if (wrapper == null)
+        {
+            Debug.LogError("[에러] JsonUtility 파싱 실패: wrapper == null");
+            return new List<DialogueBlock>();
+        }
+
+        if (wrapper.blocks == null)
+        {
+            Debug.LogError("[에러] 파싱 성공했으나 blocks == null");
+            return new List<DialogueBlock>();
+        }
+
+        Debug.Log($"[로딩된 씬 수] {wrapper.blocks.Count}");
+        return wrapper.blocks;
     }
 
-    public void ShowChoices()
-    {
-        var uiManager = FindObjectOfType<DialogueUIManager>();
-        uiManager.DisplayChoices(currentBlock.choices, traits);
-    }
+
 }
