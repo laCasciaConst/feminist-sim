@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using System.Linq;
+
 
 public class DialogueUIManager : MonoBehaviour
 {
@@ -61,6 +63,7 @@ public class DialogueUIManager : MonoBehaviour
             string localizedText = currentLanguage == SupportedLanguage.Korean ? choice.text_kr : choice.text_fr;
             text.text = localizedText;
             text.font = currentLanguage == SupportedLanguage.Korean ? koreanFontAsset : frenchFontAsset;
+            text.richText = false;
 
             bool isAvailable = DialogueManager.Instance.EvaluateCondition(choice.availableIf, traits, true);
             bool isLocked = DialogueManager.Instance.EvaluateCondition(choice.lockedIf, traits, false);
@@ -102,6 +105,19 @@ public class DialogueUIManager : MonoBehaviour
         }
     }
 
+    public static DialogueUIManager Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
+
     private GameObject GetPrefabByChoiceId(string id)
     {
         if (string.IsNullOrEmpty(id)) return choiceButtonPrefabA;
@@ -133,10 +149,14 @@ public class DialogueUIManager : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         selectedButton.SetActive(false);
         List<string> followUp = currentLanguage == SupportedLanguage.Korean ? choice.followUp_kr : choice.followUp_fr;
-        DisplayFollowUp(followUp, () => StartCoroutine(FadeTransition(() => DialogueManager.Instance.GoToNextScene())));
+
+        DisplayLines(followUp, () =>
+        {
+            DialogueManager.Instance.GoToNextScene();
+        });
     }
 
-    public void DisplayFollowUp(List<string> lines, System.Action onComplete = null)
+    public void DisplayLines(List<string> lines, System.Action onComplete = null)
     {
         if (followUpCoroutine != null)
             StopCoroutine(followUpCoroutine);
@@ -144,23 +164,15 @@ public class DialogueUIManager : MonoBehaviour
         followUpCoroutine = StartCoroutine(ShowLinesCoroutine(lines, onComplete));
     }
 
-    public void StartDialogue(List<DialogueLine> lines, System.Action onDialogueComplete = null)
+    public void StartDialogue(List<DialogueLine> lines, System.Action onComplete = null)
     {
-        List<string> localizedLines = new List<string>();
-        foreach (var line in lines)
-        {
-            string text = currentLanguage == SupportedLanguage.Korean ? line.text_kr : line.text_fr;
-            localizedLines.Add(text);
-        }
-
-        TMP_FontAsset selectedFont = currentLanguage == SupportedLanguage.Korean ? koreanFontAsset : frenchFontAsset;
-        bodyText.font = selectedFont;
-        labelText.font = selectedFont;
-
-        StartCoroutine(ShowLinesCoroutine(localizedLines, onDialogueComplete));
+        var localized = lines.Select(l => currentLanguage == SupportedLanguage.Korean ? l.text_kr : l.text_fr).ToList();
+        bodyText.font = labelText.font = (currentLanguage == SupportedLanguage.Korean ? koreanFontAsset : frenchFontAsset);
+        DisplayLines(localized, onComplete);
     }
 
-    IEnumerator TypeLine(string line)
+
+    public IEnumerator TypeLine(string line)
     {
         isTyping = true;
         bodyText.text = "";
@@ -214,23 +226,37 @@ public class DialogueUIManager : MonoBehaviour
     public Image fadePanel;
 
     // 페이드 함수
-    public IEnumerator FadeTransition(System.Action onMidpoint = null)
+    public IEnumerator FadeInBeforeDialogue(System.Action onFadeComplete)
     {
         canAcceptInput = false;
 
         fadePanel.gameObject.SetActive(true);
-        fadePanel.color = new Color(0, 0, 0, 0);
-        yield return fadePanel.DOFade(1f, 1f).WaitForCompletion();
+        fadePanel.color = new Color(0, 0, 0, 1); // 이미 어두운 상태로 시작
 
-        onMidpoint?.Invoke();  // 중간 지점에서 씬 전환
-
-        yield return new WaitForSeconds(0.2f);
-        yield return fadePanel.DOFade(0f, 0.5f).WaitForCompletion();
+        // 밝아지기
+        yield return fadePanel.DOFade(0f, 2f).WaitForCompletion();
         fadePanel.gameObject.SetActive(false);
 
-        yield return new WaitForSeconds(1.5f);
+        // yield return new WaitForSeconds(1f); // 여백 추가 (선택사항)
 
-        // 다음 씬 실행
-        DialogueManager.Instance.PlayCurrentScene();
+        canAcceptInput = true;
+
+        onFadeComplete?.Invoke();
+    }
+
+    public IEnumerator FadeOutAfterDialogue(System.Action onFadeComplete = null)
+    {
+        canAcceptInput = false;
+
+        fadePanel.gameObject.SetActive(true);
+        fadePanel.color = new Color(0, 0, 0, 0); // 밝은 상태에서 시작
+
+        yield return fadePanel.DOFade(1f, 1f).WaitForCompletion(); // 어두워짐
+        yield return new WaitForSeconds(0.5f);
+
+        bodyText.text = "";
+        dialoguePanel.SetActive(true);
+
+        onFadeComplete?.Invoke();
     }
 }

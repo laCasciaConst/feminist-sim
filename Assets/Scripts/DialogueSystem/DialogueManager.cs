@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -46,9 +47,9 @@ public class DialogueManager : MonoBehaviour
         currentSceneIndex = 0;
         PlayScene(currentSceneList[currentSceneIndex]);
 
-        Debug.Log($"[씬 ID] {currentBlock.sceneId}");
-        foreach (var d in currentBlock.dialogues)
-            Debug.Log($"[대사] {d.speaker}: {d.text_kr}");
+        // Debug.Log($"[씬 ID] {currentBlock.sceneId}");
+        // foreach (var d in currentBlock.dialogues)
+        //     Debug.Log($"[대사] {d.speaker}: {d.text_kr}");
 
         foreach (var c in currentBlock.choices)
             Debug.Log($"[선택지] {c.id}: {c.text_kr} → 효과 {c.effects.Count}개");
@@ -57,8 +58,9 @@ public class DialogueManager : MonoBehaviour
     void PlayScene(DialogueBlock block)
     {
         currentBlock = block;
-        var uiManager = FindObjectOfType<DialogueUIManager>();
+        var uiManager = DialogueUIManager.Instance;
 
+        uiManager.bodyText.text = "";
         uiManager.dialoguePanel.SetActive(true);
         uiManager.choiceContainer.gameObject.SetActive(false);
 
@@ -73,19 +75,32 @@ public class DialogueManager : MonoBehaviour
         currentSceneIndex++;
         if (currentSceneIndex < currentSceneList.Count)
         {
-            PlayScene(currentSceneList[currentSceneIndex]);
+            Debug.Log("[DEBUG] 다음 씬으로 넘어감");
+            StartCoroutine(FullSceneTransition(currentSceneList[currentSceneIndex]));
         }
         else
         {
-            Debug.Log("[엔딩] 더 이상 다음 씬이 없습니다.");
-            // 필요 시 엔딩 화면으로 전환 등 처리
+            Debug.Log("[엔딩] 전체 씬 종료");
         }
     }
 
-    public void ShowChoices()
+    private IEnumerator FullSceneTransition(DialogueBlock nextBlock)
     {
-        var uiManager = FindObjectOfType<DialogueUIManager>();
-        uiManager.DisplayChoices(currentBlock.choices, traits);
+        var ui = DialogueUIManager.Instance;
+
+        // 1. 페이드아웃
+        yield return ui.FadeOutAfterDialogue(); // 여기 내부에서 dialoguePanel도 꺼졌다고 가정
+
+        // 2. 약간의 여백 (선택사항)
+        yield return new WaitForSeconds(0.2f);
+
+        // 3. 페이드인
+        yield return ui.FadeInBeforeDialogue(() => { }); //절대 람다를 넘기는걸 잊지 마씨오..좃되기시르면
+
+        // 4. 약간 대기 후 대사 시작
+        // yield return new WaitForSeconds(0.5f);
+
+        PlayScene(nextBlock);
     }
 
     public void ApplyEffects(List<ChoiceEffect> effects)
@@ -139,12 +154,10 @@ public class DialogueManager : MonoBehaviour
     {
         string path = Path.Combine(Application.streamingAssetsPath, filename);
         string json = File.ReadAllText(path);
-
-        Debug.Log("[원본 JSON 내용]\n" + json);
+        // Debug.Log("[원본 JSON 내용]: " + json);
 
         json = "{\"blocks\":" + json + "}";
-
-        Debug.Log("[래핑된 JSON 내용]\n" + json);
+        // Debug.Log("[래핑된 JSON 내용]: " + json);
 
         DialogueBlockListWrapper wrapper = JsonUtility.FromJson<DialogueBlockListWrapper>(json);
 
@@ -162,10 +175,5 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log($"[로딩된 씬 수] {wrapper.blocks.Count}");
         return wrapper.blocks;
-    }
-
-    public void PlayCurrentScene()
-    {
-        PlayScene(currentSceneList[currentSceneIndex]);
     }
 }
