@@ -55,7 +55,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log($"[선택지] {c.id}: {c.text_kr} → 효과 {c.effects.Count}개");
     }
 
-    void PlayScene(DialogueBlock block)
+    public void PlayScene(DialogueBlock block)
     {
         currentBlock = block;
         var uiManager = DialogueUIManager.Instance;
@@ -105,22 +105,12 @@ public class DialogueManager : MonoBehaviour
 
     public void ApplyEffects(List<ChoiceEffect> effects)
     {
-        foreach (var effect in effects)
+        TraitCalculator.ApplyEffects(traits, effects);
+
+        string sid = currentBlock.sceneId;
+        if (sid.StartsWith("2016-B-Q") || sid.StartsWith("2017-A-Q"))
         {
-            if (!traits.ContainsKey(effect.trait)) continue;
-
-            switch (effect.mode)
-            {
-                case "add":
-                    traits[effect.trait] += effect.value;
-                    break;
-                case "set":
-                    traits[effect.trait] = effect.value;
-                    break;
-                    // 향후 필요 시 다른 mode 확장 가능
-            }
-
-            Debug.Log($"[효과 적용] {effect.trait} → {traits[effect.trait]}");
+            TraitCalculator.ApplyMultipliers(traits, sid);  // 새로운 함수
         }
     }
 
@@ -176,4 +166,19 @@ public class DialogueManager : MonoBehaviour
         Debug.Log($"[로딩된 씬 수] {wrapper.blocks.Count}");
         return wrapper.blocks;
     }
+
+    public enum Gender { Male, Female }
+    public static Gender PlayerGender
+    {
+        get
+        {
+            return (Gender)PlayerPrefs.GetInt("PlayerGender", 0); // 기본값 Male
+        }
+        set
+        {
+            PlayerPrefs.SetInt("PlayerGender", (int)value);
+        }
+    }
+
+    string processedText = GetLocalizedText(line).Replace("{playerName}", YourPlayerNameManager.CurrentName);
 }

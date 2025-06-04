@@ -15,19 +15,23 @@ public class DialogueChoice
 }
 
 // [System.Serializable]
-    // public class ChoiceGroup {
-    //     public string ChoiceGroupID;
-    //     public List<DialogueChoice> Choices;
-    // }
+// public class ChoiceGroup {
+//     public string ChoiceGroupID;
+//     public List<DialogueChoice> Choices;
+// }
 
-    [System.Serializable]
+[System.Serializable]
 public class DialogueLine
 {
     public string speaker;
     public string label_kr;
-    public string text_kr;
+    public string text_kr;           // 공통
+    public string text_kr_male;      // 남성 전용
+    public string text_kr_female;
     public string label_fr;
     public string text_fr;
+    public string text_fr_female;
+    public string text_fr_male;
 }
 
 [System.Serializable]

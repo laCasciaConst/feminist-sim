@@ -1,0 +1,234 @@
+[
+    {
+  "sceneId": "2016_A_Q1",
+  "dialogues": [
+    {
+      "speaker": "FriendA",
+      "label_kr": "친구 A",
+      "label_fr": "Ami A",
+      "text_kr": "야 너 오늘 왜 이렇게 까매졌어? 썬크림 안 발랐지!",
+      "text_fr": ""
+    },
+    {
+      "speaker": "Jin",
+      "label_kr": "진이",
+      "label_fr": "Jin",
+      "text_kr": "어제 그냥 귀찮아서…",
+      "text_fr": ""
+    },
+    {
+      "speaker": "FriendB",
+      "label_kr": "친구 B",
+      "label_fr": "Ami B",
+      "text_kr": "미쳤어? 요즘은 흐려도 다 탄다니까.",
+      "text_fr": ""
+    },
+    {
+      "speaker": "FriendA",
+      "label_kr": "친구 A",
+      "label_fr": "Ami A",
+      "text_kr": "그니까! 야 내 거라도 좀 발라.",
+      "text_fr": ""
+    },
+    {
+      "speaker": "Jin",
+      "label_kr": "진이",
+      "label_fr": "Jin",
+      "text_kr": "(받아 바르며) 고마워… 진짜 티 나?",
+      "text_fr": ""
+    },
+    {
+      "speaker": "FriendB",
+      "label_kr": "친구 B",
+      "label_fr": "Ami B",
+      "text_kr": "티 엄청 나지~ 완전 시골 다녀온 사람 같아.",
+      "text_fr": ""
+    },
+    {
+      "speaker": "Narration",
+      "label_kr": "내레이션",
+      "label_fr": "Narration",
+      "text_kr": "(교실에 웃음소리 퍼짐. 언니는 같이 웃지만 어색해 보인다. 플레이어는 조용히 그걸 듣고 있다.)",
+      "text_fr": ""
+    }
+  ],
+  "choices": [
+    {
+      "id": "2016_A_Q1_A",
+      "text_kr": "그냥 귀찮아서 안 바를 수도 있는 거잖아.",
+      "effects": [
+        { "trait": "individual", "value": 2, "mode": "add" },
+        { "trait": "equality", "value": 2, "mode": "add" }
+      ],
+      "followUp_kr": [
+        "플레이어: 왜 저런 걸로 막 뭐라 그러지… 안 바르면 안 바르는 거지.",
+        "진이는 거울을 다시 들여다본다."
+      ],
+      "followUp_fr": []
+    },
+    {
+      "id": "2016_A_Q1_B",
+      "text_kr": "나도 썬크림 챙겨야 하나…?",
+      "effects": [
+        { "trait": "collective", "value": 2, "mode": "add" },
+        { "trait": "authority", "value": 3, "mode": "add" }
+      ],
+      "followUp_kr": [
+        "플레이어: 나도 요즘 너무 막 다니나? 애들 다 챙겨 바르던데.",
+        "플레이어는 자기 팔을 내려다보다 가방 속 화장품 파우치를 떠올린다."
+      ],
+      "followUp_fr": []
+    },
+    {
+      "id": "2016_A_Q1_C",
+      "text_kr": "웃기긴 하네. 진짜 언니 까매졌어.",
+      "effects": [
+        { "trait": "individual", "value": 2, "mode": "add" },
+        { "trait": "authority", "value": 2, "mode": "add" }
+      ],
+      "followUp_kr": [
+        "플레이어: 피부 탄 자국이 정말 보이네. 나도 피부관리 하려면 학교갈 때 썬크림을 꼭 발라야겠다.",
+        "진이는 억지웃음을 짓고 있다."
+      ],
+      "followUp_fr": []
+    },
+    {
+      "id": "2016_A_Q1_D",
+      "text_kr": "그런 걸 신경쓰네.",
+      "effects": [{ "trait": "cynicism", "value": 4, "mode": "add" }],
+      "followUp_kr": [
+        "플레이어: 피곤하겠다.",
+        "진이는 친구들 사이에 끼어 웃지만 자꾸 거울을 본다."
+      ],
+      "followUp_fr": []
+    }
+  ]
+}, 
+{
+    {
+  "id": "2016_A_Q1_A",
+  "text_kr": "문제 제기보다, 함께 제도 안에서 고치는 게 낫잖아",
+  "effects": [
+    {"trait": "authority", "value": 3, "mode": "add"},
+    {"trait": "collective", "value": 2, "mode": "add"}
+  ],
+  "multipliers": [
+    {"trait": "authority", "value": 4, "mode": "multiply"},
+    {"trait": "collective", "value": 3, "mode": "multiply"}
+  ]
+}
+},
+{
+  "sceneId": "2016-B-Q4",
+    "dialogues": [
+    {
+      "speaker": "Narration",
+      "label_kr": "내레이션",
+      "label_fr": "Narration",
+      "text_kr_male": "해가 진 뒤, 집 근처 골목길. 가로등이 하나도 없는 어두운 길. 플레이어가 혼자 걷고 있는데, 누군가 뒤에서 걸어온다. 플레이어가 돌아보자 준이가 흠칫 놀란다.",
+      "text_kr_female": "해가 진 뒤, 집 근처 골목길. 가로등이 하나도 없는 어두운 길. 플레이어가 혼자 걷고 있는데, 누군가 뒤에서 걸어온다. 플레이어는 잠깐 멈추며 뒤를 흘깃 본다. 검은 후드티. 순간 긴장 — 곧바로 준이라는 걸 알아보고 숨을 내쉰다."
+    },
+    {
+      "speaker": "Jun",
+      "label_kr": "준이",
+      "label_fr": "Jun",
+      "text_kr_male": "어, 안녕? 너였네. 어두워서 쫄았어. 요즘 이상한 사건도 많고… 나도 무섭더라. (갑자기) …강남역 그 사건 있잖아. 나도 뉴스 보고, 솔직히 겁났어. 그런 미친놈이 갑자기 날 죽이면 어떡해? 세상 진짜 이상해졌어. 진짜 무섭다… 그럴 땐 어떻게 해야 하지?",
+      "text_kr_female": "(당황한 듯 웃음) 뭐야, 나 못 알아봤어? 사람 서운하게."
+    },
+    {
+      "speaker": "Player",
+      "label_kr": "당신",
+      "label_fr": "Toi",
+      "text_kr_male": "",
+      "text_kr_female": "…좀 깜짝 놀랐어."
+    },
+    {
+      "speaker": "Jun",
+      "label_kr": "준이",
+      "label_fr": "Jun",
+      "text_kr_male": "",
+      "text_kr_female": "이 길 진짜 어둡지. 요즘 이상한 사건도 많고… 나도 무섭더라. (갑자기) …강남역 그 사건 있잖아. 나도 뉴스 보고, 솔직히 겁났어. 그런 미친놈이 갑자기 날 죽이면 어떡해. 세상 진짜 이상해졌어."
+    },
+    {
+      "speaker": "Narration",
+      "label_kr": "내레이션",
+      "label_fr": "Narration",
+      "text_kr_male": "플레이어는 아무 말 없이 걷는다. 하긴, 남자도 무서울 수 있지.",
+      "text_kr_female": "플레이어는 아무 말 없이 걷는다. 그 말이 이상한 건 아닌데… 어딘가 낯설다."
+    }
+  ],
+  "choices": [
+    {
+      "id": "2016_B_Q4_A",
+      "text_kr": "무섭긴 하지. 근데 그 사건은 여자만 노렸잖아.",
+      "effects": [
+        {"trait": "authority", "value": 4, "mode": "add"},
+        {"trait": "individual", "value": 3, "mode": "add"}
+      ],
+      "followUp_kr": [
+        "{playerName}: 너는 무서워하지 않아도 될 걸? 남자만 골라 죽이는 사람은 잘 없던데…",
+        "Jun: 야, 난 진짜 무섭다니까.",
+        "{playerName}: 다음부턴 다른 길로 가야겠다.",
+        "Jun: 그게 낫겠어.",
+        "(둘은 함께 집으로 돌아갔다.)"
+      ],
+      "followUp_fr": [],
+      "availableIf": "",
+      "lockedIf": ""
+    },
+    {
+      "id": "2016_B_Q4_B",
+      "text_kr": "요즘은 누가 피해자 될지 몰라. 괜히 나도 신경 쓰이긴 해.",
+      "effects": [
+        {"trait": "authority", "value": 4, "mode": "add"},
+        {"trait": "collective", "value": 3, "mode": "add"}
+      ],
+      "followUp_kr": [
+        "Jun: 칼 든 사람을 마주치면 무조건 도망치는 게 상책이래. 아무리 레슬링 선수여도!",
+        "{playerName}: 하긴 그렇겠다. 근데 이 길은 너무 어둡네.",
+        "Jun: 그러게. 가로등이 더 있으면 좋을 걸.",
+        "(둘은 함께 집으로 돌아갔다.)"
+      ],
+      "followUp_fr": [],
+      "availableIf": "",
+      "lockedIf": ""
+    },
+    {
+      "id": "2016_B_Q4_C",
+      "text_kr": "여자들은 늘 겁나고 무서운데.",
+      "effects": [
+        {"trait": "equality", "value": 4, "mode": "add"},
+        {"trait": "collective", "value": 3, "mode": "add"}
+      ],
+      "followUp_kr": [
+        "{playerName}: 너는 무서워하지 않아도 될 걸? 남자만 골라 죽이는 사람은 잘 없던데…",
+        "Jun: 야, 난 진짜 무섭다니까.",
+        "{playerName}: 다음부턴 다른 길로 가야겠다.",
+        "Jun: 그게 낫겠어.",
+        "(둘은 함께 집으로 돌아갔다.)"
+      ],
+      "followUp_fr": [],
+      "availableIf": "",
+      "lockedIf": ""
+    },
+    {
+      "id": "2016_B_Q4_D",
+      "text_kr": "그치… 갑자기 칼 들고 오면 남자도 죽지.",
+      "effects": [
+        {"trait": "equality", "value": 4, "mode": "add"},
+        {"trait": "individual", "value": 3, "mode": "add"}
+      ],
+      "followUp_kr": [
+        "Jun: 칼 든 사람을 마주치면 무조건 도망치는 게 상책이래. 아무리 레슬링 선수여도!",
+        "{playerName}: 하긴 그렇겠다. 근데 이 길은 너무 어둡네.",
+        "Jun: 그러게. 가로등이 더 있으면 좋을 걸.",
+        "(둘은 함께 집으로 돌아갔다.)"
+      ],
+      "followUp_fr": [],
+      "availableIf": "",
+      "lockedIf": ""
+    }
+  ]
+}
+
+]

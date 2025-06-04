@@ -26,15 +26,14 @@ with open(converted_file, encoding="utf-8") as f:
 with open(followup_file, encoding="utf-8") as f:
     followup_data = json.load(f)
 
-for choice in original_data["choices"]:
-    if "availableIf" not in choice:
-        choice["availableIf"] = ""
-    if "lockedIf" not in choice:
-        choice["lockedIf"] = ""
-
 for scene in original_data:
     for choice in scene.get("choices", []):
-        cid = choice["id"]
+        if "availableIf" not in choice:
+            choice["availableIf"] = ""
+        if "lockedIf" not in choice:
+            choice["lockedIf"] = ""
+
+        cid = choice.get("id")
         if cid in followup_data:
             choice["followUp_kr"] = followup_data[cid]
             choice["followUp_fr"] = []

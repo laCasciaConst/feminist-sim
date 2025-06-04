@@ -1,0 +1,851 @@
+[
+  {
+    "sceneId": "2016-A-Q1",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "점심시간, 교실. 창가에 앉은 언니와 친구들. 플레이어는 몇 책상 뒤에 앉아있다.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendA",
+        "label_kr": "친구 A",
+        "label_fr": "Ami A",
+        "text_kr": "야 너 오늘 왜 이렇게 까매졌어? 썬크림 안 발랐지!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "어제 그냥 귀찮아서…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "미쳤어? 요즘은 흐려도 다 탄다니까.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendA",
+        "label_kr": "친구 A",
+        "label_fr": "Ami A",
+        "text_kr": "그니까! 야 내 거라도 좀 발라.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "(받아 바르며) 고마워… 진짜 티 나?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "티 엄청 나지~ 완전 시골 다녀온 사람 같아.",
+        "text_fr": ""
+      }
+    ],
+    "choices": []
+  },
+  {
+    "sceneId": "2016-A-Q2",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "복도, 점심시간 직전. 여학생 몇 명이 벽 쪽에 주루룩 서 있다. 중년 남교사 한 명이 큰소리로 호통치고 있다. 플레이어는 친구와 함께 지나가던 중, 그 장면을 본다.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "남교사",
+        "label_kr": "남교사",
+        "label_fr": "남교사",
+        "text_kr": "이게 복장이냐! 학생이 화장은 왜 해? 치마 길이는 왜 이 모양이야!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "여학생A",
+        "label_kr": "여학생A",
+        "label_fr": "여학생A",
+        "text_kr": "(작게) 다른 애들도 다 이러고 다니는데요…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "남교사",
+        "label_kr": "남교사",
+        "label_fr": "남교사",
+        "text_kr": "니들이 지금 몇 학년이야! 이제 중3인데, 벌써 그렇게 발라당 까져서 어딜 돌아다니려고?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "친구",
+        "label_kr": "친구",
+        "label_fr": "친구",
+        "text_kr": "야 쟤네 오늘 또 걸렸네… 화장 지우게 하려나 봐.",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2016-A-Q2_2016_A_Q2_A",
+        "text_kr": "왜 여자애들한테만 저렇게 심하게 굴지?",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 3,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-A-Q2_2016_A_Q2_B",
+        "text_kr": "교칙은 어긴 건 맞잖아. 중3이면 좀 조심해야지.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 4,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-A-Q2_2016_A_Q2_C",
+        "text_kr": "쌤이 너무 막말하긴 했다… 근데 나도 걸리면 어쩌지.",
+        "effects": [
+          {
+            "trait": "individual",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-A-Q2_2016_A_Q2_D",
+        "text_kr": "(시선 피하고 그냥 지나간다.)",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2016-A-Q3",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "과학 수업, 해부 실습 준비 중. 테이블마다 소심장 하나씩 배치됨. 칼, 장갑, 핀셋 등 준비 완료.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "교사",
+        "label_kr": "교사",
+        "label_fr": "교사",
+        "text_kr": "오늘은 심장 해부입니다. 간단한 구조만 볼 거예요. 위험하진 않지만 조심하세요.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "친구A (여학생)",
+        "label_kr": "친구A (여학생)",
+        "label_fr": "친구A (여학생)",
+        "text_kr": "으… 이거 징그러워. 토 나와. 나 그냥 결과 정리할게.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "남학생",
+        "label_kr": "남학생",
+        "label_fr": "남학생",
+        "text_kr": "어, 내가? 왜?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "(조용히) 난 이거 해본 적 있어. 작년에 캠프에서.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "교사",
+        "label_kr": "교사",
+        "label_fr": "교사",
+        "text_kr": "(무심하게) 그럼 네가 진이한테 설명 듣고 진행하지?",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2016-A-Q3_2016_A_Q3_A",
+        "text_kr": "언니가 해본 적 있다는데 왜 저 남학생을 시킬까?",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-A-Q3_2016_A_Q3_B",
+        "text_kr": "우웩, 징그러운 걸 굳이 해야 할까? 그냥 냅두자.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 1,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-A-Q3_2016_A_Q3_C",
+        "text_kr": "새로 해보는 사람이 하는 게 낫지. 그래야 배우지.",
+        "effects": [
+          {
+            "trait": "collective",
+            "value": 2,
+            "mode": "add"
+          },
+          {
+            "trait": "authority",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-A-Q3_2016_A_Q3_D",
+        "text_kr": "어차피 누가 하든 결과는 똑같으니.",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2016-B-Q1",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "3학년 교실, 점심시간 전",
+        "text_fr": ""
+      },
+      {
+        "speaker": "학생회장 (마이크 잡고 말함)",
+        "label_kr": "학생회장 (마이크 잡고 말함)",
+        "label_fr": "학생회장 (마이크 잡고 말함)",
+        "text_kr": "요즘 논란이 있었던 일에 대해서, 학교에서도 우리 의견을 듣고 싶다고 하셨어요. 누군가는, 이런 문제들이 더 커지기 전에 그냥 조용히 넘어가는 게 낫다고 하고… 또 누군가는, 불편해도 할 말은 해야 한다고 생각해요.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "(플레이어 옆에 앉은 형이 속삭인다) 야, 들었어? 어떤 애 엄마가 교육청에 정식 민원 넣으려고 한다던데. 그렇게 되면 학교 전체로 조사 나올 수도 있다던데. 나 같으면 그냥… 우리끼리 해결하고 말겠다.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "담임교사",
+        "label_kr": "담임교사",
+        "label_fr": "담임교사",
+        "text_kr": "정답은 없어요. 다만, 일이 이미 커진 건 맞고, 더 커질 수도 있는 상황입니다. 오늘은, 여러분 스스로 어떤 입장인지 생각해보면 좋겠어요. 길게 안 써도 되니까, 가장 가까운 생각에 동그라미만 쳐보세요.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "담임교사",
+        "label_kr": "담임교사",
+        "label_fr": "담임교사",
+        "text_kr": "혹시 그런 생각을 하게 된 이유가 있나요? 꼭 쓸 필요는 없지만, 이유가 떠오른다면 간단하게라도 적어보세요.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "authority_flag",
+        "label_kr": "authority_flag",
+        "label_fr": "authority_flag",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "→ Multiplier",
+        "label_kr": "→ Multiplier",
+        "label_fr": "→ Multiplier",
+        "text_kr": "authority*4, collective*3",
+        "text_fr": ""
+      },
+      {
+        "speaker": "→ Multiplier",
+        "label_kr": "→ Multiplier",
+        "label_fr": "→ Multiplier",
+        "text_kr": "authority*4, individual*3",
+        "text_fr": ""
+      },
+      {
+        "speaker": "equality_flag",
+        "label_kr": "equality_flag",
+        "label_fr": "equality_flag",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "→ Multiplier",
+        "label_kr": "→ Multiplier",
+        "label_fr": "→ Multiplier",
+        "text_kr": "equality*4, collective*3",
+        "text_fr": ""
+      },
+      {
+        "speaker": "→ Multiplier",
+        "label_kr": "→ Multiplier",
+        "label_fr": "→ Multiplier",
+        "text_kr": "equality*4, individual*3",
+        "text_fr": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "2016-B-Q1_2016_B_Q1_A",
+        "text_kr": "우리끼리 교칙을 고치면 해결되지 않을까?",
+        "effects": [],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q1_2016_B_Q1_B",
+        "text_kr": "이건 너무 부당하니까 교육청에 알려야 해.",
+        "effects": [],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q1_2016_B_Q2_A-1",
+        "text_kr": "문제 제기보다, 함께 제도 안에서 고치는 게 낫잖아",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 3,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q1_2016_B_Q2_A-2",
+        "text_kr": "내가 할 수 있는 선에서 가장 현실적이야.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q1_2016_B_Q2_B-1",
+        "text_kr": "다들 불편해 하고 있어. 같이 말하면 바뀔 거야.",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 2,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q1_2016_B_Q2_B-2",
+        "text_kr": "이건 잘못됐어. 누군가는 말해야 하잖아.",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 5,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2016-B-Q3",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "점심시간. 급식실에서 식사하다 몇몇 학생이 휴대폰으로 기사를 돌려보며 이야기 중. 언니 진이와 친구들 몇 명, 그리고 남학생 준이까지 무리 지어 앉아 있다. 뉴스 화면 이미지.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendA",
+        "label_kr": "친구 A",
+        "label_fr": "Ami A",
+        "text_kr": "야야, 강남역 사건 봤어? 여자들이 자길 무시해서 죽였대!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "남녀 공용화장실에서 기다렸댔지? 너무 무섭다…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "에이… 그건 그냥 정신병자라 그런 거 아냐?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "(찝찝한 표정) 근데… 그거 진짜 여자라서 죽인거 맞아? 그냥 정신병자가 그런 거 아닌가?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendA",
+        "label_kr": "친구 A",
+        "label_fr": "Ami A",
+        "text_kr": "그리고 ‘평소에 여자들이 나를 무시했다’고 말했대.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "(헛웃음) 그러니까… 그 사람 기준에서는 그냥 아무 여자나였던 거고, 그게 꼭 사회 문제라고 보기엔 좀…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendA",
+        "label_kr": "친구 A",
+        "label_fr": "Ami A",
+        "text_kr": "근데 피해자 입장에선 그냥 ‘운이 나빠서 죽은 여자’가 아니잖아.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "그런데 그 사람, 정신적 문제가 있는 건 맞다더라. 피해망상이 있대.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "FriendB",
+        "label_kr": "친구 B",
+        "label_fr": "Ami B",
+        "text_kr": "아무리 그래도…",
+        "text_fr": ""
+      }
+    ],
+    "choices": []
+  },
+  {
+    "sceneId": "2016-B-Q3",
+    "dialogues": [],
+    "choices": [
+      {
+        "id": "2016-B-Q3_2016_B_Q3_A",
+        "text_kr": "그런 사람들한테는 뭐든 이유가 되니까… 피해망상이란 그런 거잖아.",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q3_2016_B_Q3_B",
+        "text_kr": "우리, 다른 얘기 할까?",
+        "effects": [
+          {
+            "trait": "authority",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "collective",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q3_2016_B_Q3_C",
+        "text_kr": "여자라서 죽인 건데, 그냥 ‘정신병자’ 얘기로 끝낼 수 있어?",
+        "effects": [
+          {
+            "trait": "equality",
+            "value": 4,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 3,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      },
+      {
+        "id": "2016-B-Q3_2016_B_Q3_D",
+        "text_kr": "(중학생끼리 말해서 바뀌는 것도 없는데, 왜 열을 내지?)",
+        "effects": [
+          {
+            "trait": "cynicism",
+            "value": 8,
+            "mode": "add"
+          },
+          {
+            "trait": "individual",
+            "value": 2,
+            "mode": "add"
+          }
+        ],
+        "followUp_kr": [],
+        "followUp_fr": []
+      }
+    ]
+  },
+  {
+    "sceneId": "2016-B-Q4",
+    "dialogues": [
+      {
+        "speaker": "Narration (type=narration)",
+        "label_kr": "Narration (type=narration)",
+        "label_fr": "Narration (type=narration)",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "해가 진 뒤, 집 근처 골목길. 가로등이 하나도 없는 어두운 길.플레이어가 혼자 걷고 있는데, 누군가 뒤에서 걸어온다. 플레이어가 돌아보자 준이가 흠칫 놀란다.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "어, 안녕? 너였네. 어두워서 쫄았어. 요즘 이상한 사건도 많고… 나도 무섭더라. (갑자기) …강남역 그 사건 있잖아. 나도 뉴스 보고, 솔직히 겁났어. 그런 미친놈이 갑자기 날 죽이면 어떡해? 세상 진짜 이상해졌어. 진짜 무섭다… 그럴 땐 어떻게 해야 하지?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "해가 진 뒤, 집 근처 골목길. 가로등이 하나도 없는 어두운 길. 플레이어가 혼자 걷고 있는데, 누군가 뒤에서 걸어온다. 플레이어는 잠깐 멈추며 뒤를 흘깃 본다. 검은 후드티. 순간 긴장 — 곧바로 준이라는 걸 알아보고 숨을 내쉰다.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "(당황한 듯 웃음) 뭐야, 나 못 알아봤어? 사람 서운하게.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "…좀 깜짝 놀랐어.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "이 길 진짜 어둡지. 요즘 이상한 사건도 많고… 나도 무섭더라. (갑자기) …강남역 그 사건 있잖아. 나도 뉴스 보고, 솔직히 겁났어. 그런 미친놈이 갑자기 날 죽이면 어떡해. 세상 진짜 이상해졌어.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "1,3 번 선택 시",
+        "label_kr": "1,3 번 선택 시",
+        "label_fr": "1,3 번 선택 시",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "너는 무서워하지 않아도 될 걸? 남자만 골라 죽이는 사람은 잘 없던데…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "야, 난 진짜 무섭다니까.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "다음부턴 다른 길로 가야겠다.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "그게 낫겠어.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "2,4 번 선택 시",
+        "label_kr": "2,4 번 선택 시",
+        "label_fr": "2,4 번 선택 시",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "칼 든 사람을 마주치면 무조건 도망치는 게 상책이래. 아무리 레슬링 선수여도!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "하긴 그렇겠다. 근데 이 길은 너무 어둡네.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "그러게. 가로등이 더 있으면 좋을 걸.",
+        "text_fr": ""
+      }
+    ],
+    "choices": []
+  },
+  {
+    "sceneId": "2016-B-Q5",
+    "dialogues": [
+      {
+        "speaker": "Narration",
+        "label_kr": "내레이션",
+        "label_fr": "Narration",
+        "text_kr": "집 화장실. 진이가 거울 앞에서 화장한 입술과 피부 지운다. 플레이어가 들어서자, 진이가 고개를 돌리며 말한다.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "있잖아, 너는 만약 무인도에 혼자 떨어지면 화장할 거 같아? (웃으며 썬크림을 지운다.) 나는 할 것 같아. 그냥… 내가 예쁜 걸 보는 게 기분좋단 말이야. (한숨) 근데 아침마다 귀찮긴 해. 일찍 일어나야 하고.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "(거울 보며 웃음) 남자들은 화장 안 해도 돼서 진짜 좋겠네. 안 하면 피곤해 보일까봐 일찍 일어나서 화장해야 해. 너흰 그냥 민낯으로 나가면 아무도 뭐라 안 하잖아.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "우린 면도하잖아?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "그거랑은 다르지!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jun",
+        "label_kr": "준이",
+        "label_fr": "Jun",
+        "text_kr": "비슷하지. 난 수염이 너무 빨리 자라!",
+        "text_fr": ""
+      },
+      {
+        "speaker": "1번 선택 시",
+        "label_kr": "1번 선택 시",
+        "label_fr": "1번 선택 시",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "좋아서 하는 거 맞아?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "…음, 나도 가끔 헷갈려.(거울 속 자기 얼굴을 보며 살짝 웃는다.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "예쁘면 기분 좋은 건 맞는데… 가끔은 내가 좋아서 하는 건지, 안 하면 좀 찝찝해서 하는 건지 잘 모르겠어. (진이, 마지막으로 눈 밑을 닦으며 거울에서 시선을 뗀다.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "2번 선택 시",
+        "label_kr": "2번 선택 시",
+        "label_fr": "2번 선택 시",
+        "text_kr": "",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "화장이 재밌어서 좋아하는 사람도 있더라.",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "맞아. 나도 색 조합 맞추고 브러쉬 쓸 때 좀 재밌긴 해. 근데 매일 하다 보면 그냥… 습관 같아. (진이, 거울에 비친 입꼬리를 올려보며 장난스럽게 웃는다.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "그렇게까지 꾸며야 하나 싶긴 해…",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "나도 가끔 그렇게 생각해. 아무도 뭐라 안 했으면, 나도 굳이 안 할지도 모르지. 근데… 다들 하잖아. (진이, 거울에서 눈을 떼며 한숨을 쉰다.)",
+        "text_fr": ""
+      },
+      {
+        "speaker": "{playerName}",
+        "label_kr": "{playerName}",
+        "label_fr": "{playerName}",
+        "text_kr": "화장 안 하는 여자는 없어?",
+        "text_fr": ""
+      },
+      {
+        "speaker": "Jin",
+        "label_kr": "진이",
+        "label_fr": "Jin",
+        "text_kr": "있지. 근데 진짜 드물어. 그리고… 안 하면 꼭 어디 아프냐고 물어보는 사람이 생겨. 그게 더 귀찮아. (진이, 씁쓸한 미소를 지으며 볼을 문지른다.)",
+        "text_fr": ""
+      }
+    ],
+    "choices": []
+  }
+]

@@ -259,4 +259,13 @@ public class DialogueUIManager : MonoBehaviour
 
         onFadeComplete?.Invoke();
     }
+
+    string GetLocalizedText(DialogueLine line)
+    {
+        if (PlayerGender == Gender.Male && !string.IsNullOrEmpty(line.text_kr_male))
+            return line.text_kr_male;
+        if (PlayerGender == Gender.Female && !string.IsNullOrEmpty(line.text_kr_female))
+            return line.text_kr_female;
+        return line.text_kr; // 공통 텍스트
+    }
 }

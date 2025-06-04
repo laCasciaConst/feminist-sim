@@ -28,14 +28,16 @@ with open(followup_file, encoding="utf-8") as f:
 
 for scene in original_data:
     for choice in scene.get("choices", []):
-        cid = choice["id"]
+        cid = choice.get("id")
+        if not cid:
+            continue
         if "availableIf" not in choice:
             choice["availableIf"] = ""
         if "lockedIf" not in choice:
             choice["lockedIf"] = ""
         if cid in followup_data:
             choice["followUp_kr"] = followup_data[cid]
-            choice["followUp_fr"] = []
+            choice["followUp_fr"] = [] 
 
 with open(complete_file, "w", encoding="utf-8") as f:
     json.dump(original_data, f, ensure_ascii=False, indent=2)

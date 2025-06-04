@@ -63,11 +63,13 @@ def process_followup_lines(lines):
         if ":" in line:
             speaker_raw, content = line.split(":", 1)
             speaker_raw = speaker_raw.strip()
-            label_kr, _ = get_name_label(speaker_raw)
-            label_prefix = f"{label_kr}: " if label_kr else ""
-            result.append(f"{label_prefix}{content.strip()}")
+            if speaker_raw.lower() in ["player", "플레이어"]:
+                label_kr = "{playerName}"
+            else:
+                label_kr, _ = get_name_label(speaker_raw)
+            result.append(f"{label_kr}: {content.strip()}")
         else:
-            result.append(line.strip())
+            result.append(f"나레이션: {line.strip()}")
     return result
 
 
