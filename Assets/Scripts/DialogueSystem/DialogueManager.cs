@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    public void Start()
     {
         Debug.Log("Here comes the Start function!!!");
         currentSceneList = LoadDialogueBlocksFromFile("2015_complete.json");
@@ -53,6 +53,9 @@ public class DialogueManager : MonoBehaviour
 
         foreach (var c in currentBlock.choices)
             Debug.Log($"[선택지] {c.id}: {c.text_kr} → 효과 {c.effects.Count}개");
+
+        PlayerPrefs.DeleteAll();   // 또는 DeleteKey("PlayerGender");
+
     }
 
     public void PlayScene(DialogueBlock block)
@@ -140,6 +143,25 @@ public class DialogueManager : MonoBehaviour
         };
     }
 
+    public static string GetLocalizedText(DialogueLine line)
+    {
+        var gender = PlayerGender;
+
+        if (gender == Gender.Female && !string.IsNullOrEmpty(line.text_kr_female))
+        {
+            return line.text_kr_female;
+        }
+        else if (gender == Gender.Male && !string.IsNullOrEmpty(line.text_kr_male))
+        {
+            return line.text_kr_male;
+        }
+        else
+        {
+            return line.text_kr;
+        }
+    }
+
+
     public List<DialogueBlock> LoadDialogueBlocksFromFile(string filename)
     {
         string path = Path.Combine(Application.streamingAssetsPath, filename);
@@ -168,17 +190,18 @@ public class DialogueManager : MonoBehaviour
     }
 
     public enum Gender { Male, Female }
-    public static Gender PlayerGender
-    {
-        get
-        {
-            return (Gender)PlayerPrefs.GetInt("PlayerGender", 0); // 기본값 Male
-        }
-        set
-        {
-            PlayerPrefs.SetInt("PlayerGender", (int)value);
-        }
-    }
 
-    string processedText = GetLocalizedText(line).Replace("{playerName}", YourPlayerNameManager.CurrentName);
+    public static Gender PlayerGender { get; set; } = Gender.Male;
+
+    // public static Gender PlayerGender
+    // {
+    //     get
+    //     {
+    //         return (Gender)PlayerPrefs.GetInt("PlayerGender", 0); // 기본값 Male
+    //     }
+    //     set
+    //     {
+    //         PlayerPrefs.SetInt("PlayerGender", (int)value);
+    //     }
+    // }
 }

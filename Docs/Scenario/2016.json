@@ -104,7 +104,6 @@
     }
   ]
 }, 
-{
     {
   "id": "2016_A_Q1_A",
   "text_kr": "문제 제기보다, 함께 제도 안에서 고치는 게 낫잖아",
@@ -116,7 +115,6 @@
     {"trait": "authority", "value": 4, "mode": "multiply"},
     {"trait": "collective", "value": 3, "mode": "multiply"}
   ]
-}
 },
 {
   "sceneId": "2016-B-Q4",

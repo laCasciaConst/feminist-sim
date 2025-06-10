@@ -12,7 +12,7 @@
       {
         "speaker": "FriendA",
         "label_kr": "친구 A",
-        "label_fr": "Ami A",
+        "label_fr": "Amie A",
         "text_kr": "야 너 오늘 왜 이렇게 까매졌어? 썬크림 안 발랐지!",
         "text_fr": ""
       },
@@ -26,14 +26,14 @@
       {
         "speaker": "FriendB",
         "label_kr": "친구 B",
-        "label_fr": "Ami B",
+        "label_fr": "Amie B",
         "text_kr": "미쳤어? 요즘은 흐려도 다 탄다니까.",
         "text_fr": ""
       },
       {
         "speaker": "FriendA",
         "label_kr": "친구 A",
-        "label_fr": "Ami A",
+        "label_fr": "Amie A",
         "text_kr": "그니까! 야 내 거라도 좀 발라.",
         "text_fr": ""
       },
@@ -47,7 +47,7 @@
       {
         "speaker": "FriendB",
         "label_kr": "친구 B",
-        "label_fr": "Ami B",
+        "label_fr": "Amie B",
         "text_kr": "티 엄청 나지~ 완전 시골 다녀온 사람 같아.",
         "text_fr": ""
       }
@@ -95,7 +95,7 @@
     ],
     "choices": [
       {
-        "id": "2016-A-Q2_2016_A_Q2_A",
+        "id": "2016_A_Q2_A",
         "text_kr": "왜 여자애들한테만 저렇게 심하게 굴지?",
         "effects": [
           {
@@ -115,7 +115,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-A-Q2_2016_A_Q2_B",
+        "id": "2016_A_Q2_B",
         "text_kr": "교칙은 어긴 건 맞잖아. 중3이면 좀 조심해야지.",
         "effects": [
           {
@@ -130,7 +130,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-A-Q2_2016_A_Q2_C",
+        "id": "2016_A_Q2_C",
         "text_kr": "쌤이 너무 막말하긴 했다… 근데 나도 걸리면 어쩌지.",
         "effects": [
           {
@@ -145,7 +145,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-A-Q2_2016_A_Q2_D",
+        "id": "2016_A_Q2_D",
         "text_kr": "(시선 피하고 그냥 지나간다.)",
         "effects": [
           {
@@ -172,16 +172,16 @@
         "text_fr": ""
       },
       {
-        "speaker": "교사",
+        "speaker": "Teacher",
         "label_kr": "교사",
         "label_fr": "교사",
         "text_kr": "오늘은 심장 해부입니다. 간단한 구조만 볼 거예요. 위험하진 않지만 조심하세요.",
         "text_fr": ""
       },
       {
-        "speaker": "친구A (여학생)",
-        "label_kr": "친구A (여학생)",
-        "label_fr": "친구A (여학생)",
+        "speaker": "FriendA",
+        "label_kr": "친구 A",
+        "label_fr": "Amie A",
         "text_kr": "으… 이거 징그러워. 토 나와. 나 그냥 결과 정리할게.",
         "text_fr": ""
       },
@@ -209,7 +209,7 @@
     ],
     "choices": [
       {
-        "id": "2016-A-Q3_2016_A_Q3_A",
+        "id": "2016_A_Q3_A",
         "text_kr": "언니가 해본 적 있다는데 왜 저 남학생을 시킬까?",
         "effects": [
           {
@@ -229,7 +229,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-A-Q3_2016_A_Q3_B",
+        "id": "2016_A_Q3_B",
         "text_kr": "우웩, 징그러운 걸 굳이 해야 할까? 그냥 냅두자.",
         "effects": [
           {
@@ -249,7 +249,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-A-Q3_2016_A_Q3_C",
+        "id": "2016_A_Q3_C",
         "text_kr": "새로 해보는 사람이 하는 게 낫지. 그래야 배우지.",
         "effects": [
           {
@@ -269,7 +269,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-A-Q3_2016_A_Q3_D",
+        "id": "2016_A_Q3_D",
         "text_kr": "어차피 누가 하든 결과는 똑같으니.",
         "effects": [
           {
@@ -297,7 +297,7 @@
         "speaker": "Narration",
         "label_kr": "내레이션",
         "label_fr": "Narration",
-        "text_kr": "3학년 교실, 점심시간 전",
+        "text_kr": "3학년이 모두 모인 강당, 학생회의 시간.",
         "text_fr": ""
       },
       {
@@ -315,16 +315,16 @@
         "text_fr": ""
       },
       {
-        "speaker": "담임교사",
-        "label_kr": "담임교사",
-        "label_fr": "담임교사",
+        "speaker": "담임",
+        "label_kr": "담임",
+        "label_fr": "담임",
         "text_kr": "정답은 없어요. 다만, 일이 이미 커진 건 맞고, 더 커질 수도 있는 상황입니다. 오늘은, 여러분 스스로 어떤 입장인지 생각해보면 좋겠어요. 길게 안 써도 되니까, 가장 가까운 생각에 동그라미만 쳐보세요.",
         "text_fr": ""
       },
       {
-        "speaker": "담임교사",
-        "label_kr": "담임교사",
-        "label_fr": "담임교사",
+        "speaker": "담임",
+        "label_kr": "담임",
+        "label_fr": "담임",
         "text_kr": "혹시 그런 생각을 하게 된 이유가 있나요? 꼭 쓸 필요는 없지만, 이유가 떠오른다면 간단하게라도 적어보세요.",
         "text_fr": ""
       },
@@ -373,7 +373,7 @@
     ],
     "choices": [
       {
-        "id": "2016-B-Q1_2016_B_Q1_A",
+        "id": "2016_B_Q1_A",
         "text_kr": "우리끼리 교칙을 고치면 해결되지 않을까?",
         "effects": [],
         "followUp_kr": [],
@@ -382,7 +382,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-B-Q1_2016_B_Q1_B",
+        "id": "2016_B_Q1_B",
         "text_kr": "이건 너무 부당하니까 교육청에 알려야 해.",
         "effects": [],
         "followUp_kr": [],
@@ -391,7 +391,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-B-Q1_2016_B_Q2_A-1",
+        "id": "2016_B_Q2_A-1",
         "text_kr": "문제 제기보다, 함께 제도 안에서 고치는 게 낫잖아",
         "effects": [
           {
@@ -411,7 +411,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-B-Q1_2016_B_Q2_A-2",
+        "id": "2016_B_Q2_A-2",
         "text_kr": "내가 할 수 있는 선에서 가장 현실적이야.",
         "effects": [
           {
@@ -431,7 +431,7 @@
         "lockedIf": ""
       },
       {
-        "id": "2016-B-Q1_2016_B_Q2_B-1",
+        "id": "2016_B_Q2_B-1",
         "text_kr": "다들 불편해 하고 있어. 같이 말하면 바뀔 거야.",
         "effects": [
           {

@@ -1,54 +1,35 @@
-public enum TraitMode { Add, Multiply }
-
-[System.Serializable]
-public class TraitEffect
-{
-    public string trait;
-    public float value;
-    public TraitMode mode;
-}
+using System.Collections.Generic;
 
 public static class TraitCalculator
 {
-    public static Dictionary<string, float> ApplyTraits(
-        List<TraitEffect> effects,
-        Dictionary<string, float> current,
-        string sceneId
-    )
+    public static void ApplyEffects(Dictionary<string, int> traits, List<ChoiceEffect> effects)
     {
-        Dictionary<string, float> result = new Dictionary<string, float>(current);
-
         foreach (var effect in effects)
         {
-            string trait = effect.trait;
-            float value = effect.value;
-            TraitMode mode = effect.mode;
+            if (!traits.ContainsKey(effect.trait))
+                traits[effect.trait] = 0;
 
-            if (!result.ContainsKey(trait))
-                result[trait] = 0;
-
-            float multiplier = GetSceneMultiplier(sceneId, trait);
-
-            if (mode == TraitMode.Add)
-                result[trait] += value;
-            else if (mode == TraitMode.Multiply)
-                result[trait] *= value;
-
-            // 특수 multiplier 적용
-            result[trait] *= multiplier;
+            if (effect.mode == "add")
+            {
+                traits[effect.trait] += effect.value;
+            }
+            else if (effect.mode == "multiply")
+            {
+                traits[effect.trait] = (int)(traits[effect.trait] * effect.value);
+            }
         }
-
-        return result;
     }
 
-    private static float GetSceneMultiplier(string sceneId, string trait)
+    public static void ApplyMultipliers(Dictionary<string, int> traits, string sceneId)
     {
-        if (sceneId.StartsWith("2016-B-Q") || sceneId.StartsWith("2017-A-Q"))
+        // 예시: 특정 sceneId 패턴에 따라 배수 적용
+        if (sceneId.StartsWith("2016-B-Q"))
         {
-            if (trait == "authority") return 4f;
-            if (trait == "collective") return 3f;
+            traits["cynicism"] = (int)(traits["cynicism"] * 1.5f);
         }
-        return 1f;
+        else if (sceneId.StartsWith("2017-A-Q"))
+        {
+            traits["authority"] = (int)(traits["authority"] * 1.2f);
+        }
     }
 }
-

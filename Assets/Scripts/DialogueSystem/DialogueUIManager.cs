@@ -161,21 +161,33 @@ public class DialogueUIManager : MonoBehaviour
         if (followUpCoroutine != null)
             StopCoroutine(followUpCoroutine);
 
+        var replacedLines = lines.Select(l =>
+            l.Replace("{playerName}", YourPlayerNameManager.CurrentName)
+        ).ToList();
+
+
         followUpCoroutine = StartCoroutine(ShowLinesCoroutine(lines, onComplete));
     }
 
     public void StartDialogue(List<DialogueLine> lines, System.Action onComplete = null)
     {
-        var localized = lines.Select(l => currentLanguage == SupportedLanguage.Korean ? l.text_kr : l.text_fr).ToList();
+        var localized = lines.Select(l =>
+        {
+            string raw = currentLanguage == SupportedLanguage.Korean ? l.text_kr : l.text_fr;
+            return raw.Replace("{playerName}", YourPlayerNameManager.CurrentName);
+        }).ToList();
         bodyText.font = labelText.font = (currentLanguage == SupportedLanguage.Korean ? koreanFontAsset : frenchFontAsset);
         DisplayLines(localized, onComplete);
     }
+
 
 
     public IEnumerator TypeLine(string line)
     {
         isTyping = true;
         bodyText.text = "";
+
+        string processed = line.Replace("{playerName}", YourPlayerNameManager.CurrentName);
 
         foreach (char c in line)
         {
@@ -262,10 +274,13 @@ public class DialogueUIManager : MonoBehaviour
 
     string GetLocalizedText(DialogueLine line)
     {
-        if (PlayerGender == Gender.Male && !string.IsNullOrEmpty(line.text_kr_male))
-            return line.text_kr_male;
-        if (PlayerGender == Gender.Female && !string.IsNullOrEmpty(line.text_kr_female))
-            return line.text_kr_female;
-        return line.text_kr; // 공통 텍스트
+        string baseText = DialogueManager.PlayerGender switch
+        {
+            DialogueManager.Gender.Male => string.IsNullOrEmpty(line.text_kr_male) ? line.text_kr : line.text_kr_male,
+            DialogueManager.Gender.Female => string.IsNullOrEmpty(line.text_kr_female) ? line.text_kr : line.text_kr_female,
+            _ => line.text_kr
+        };
+
+        return baseText.Replace("{playerName}", YourPlayerNameManager.CurrentName);
     }
 }
